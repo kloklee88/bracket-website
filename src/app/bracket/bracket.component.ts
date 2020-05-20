@@ -26,7 +26,7 @@ export class BracketComponent implements OnInit {
     for(let i = 0; i < 8; i++) {
       let bracketOption = new BracketOption();
       bracketOption.name = 'Test' + i;
-      bracketOption.imageUrl = 'Image' + i;
+      bracketOption.imageUrl = 'https://i.imgur.com/12UsEsi.png';
       this.bracketOptions.push(bracketOption);
     }
     //console.log(this.bracketOptions);

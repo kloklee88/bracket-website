@@ -1,13 +1,17 @@
-<div fxFill class='bracketMain'>
-    <div fxLayout='row' fxLayoutAlign='center'>
+<div fxFill fxLayout='column' class='bracketMain'>
+    <div fxLayout='row' fxFlex='5' fxLayoutAlign='center'>
         <h1 class='bracketTitle'>Bracket Competition Name</h1>
     </div>
-    <div fxLayout='row' fxLayoutAlign='center'>
-        <mat-card class='choice1' (click)='selectBracketOption(choice1)'>
-            {{choice1.name}}
+    <div class='choices' fxFlex fxLayout='row' fxLayoutAlign='center' fxLayoutGap='10px'>
+        <mat-card fxFlex='30' class='choice' (click)='selectBracketOption(choice1)'>
+            <span>{{choice1.name}}</span>
+            <br><br>
+            <img src='{{choice1.imageUrl}}'>
         </mat-card>
-        <mat-card class='choice2' (click)='selectBracketOption(choice2)'>
-            {{choice2.name}}
+        <mat-card fxFlex='30' class='choice' (click)='selectBracketOption(choice2)'>
+            <span>{{choice2.name}}</span>
+            <br><br>
+            <img src='{{choice2.imageUrl}}'>
         </mat-card>
     </div>
 </div>

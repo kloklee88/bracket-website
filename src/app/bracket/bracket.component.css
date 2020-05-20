@@ -4,9 +4,8 @@
 .bracketTitle {
     color: white;
 }
-.choice1 {
+.choice {
     color: white;
-}
-.choice2 {
-    color: white;
+    font-size: 32px;
+    text-align: center;
 }
