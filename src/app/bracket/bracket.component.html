@@ -1,0 +1,13 @@
+<div fxFill class='bracketMain'>
+    <div fxLayout='row' fxLayoutAlign='center'>
+        <h1 class='bracketTitle'>Bracket Competition Name</h1>
+    </div>
+    <div fxLayout='row' fxLayoutAlign='center'>
+        <mat-card class='choice1' (click)='selectBracketOption(choice1)'>
+            {{choice1.name}}
+        </mat-card>
+        <mat-card class='choice2' (click)='selectBracketOption(choice2)'>
+            {{choice2.name}}
+        </mat-card>
+    </div>
+</div>
