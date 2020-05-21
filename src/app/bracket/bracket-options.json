@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Jihyo",
+        "imageUrl": "https://i.imgur.com/12UsEsi.png"
+    },
+    {
+        "id": 2,
+        "name": "Nayeon",
+        "imageUrl": "https://i.imgur.com/12UsEsi.png"
+    },
+    {
+        "id": 3,
+        "name": "Tsuyu",
+        "imageUrl": "https://i.imgur.com/12UsEsi.png"
+    },
+    {
+        "id": 4,
+        "name": "Momo",
+        "imageUrl": "https://i.imgur.com/12UsEsi.png"
+    },
+    {
+        "id": 5,
+        "name": "Sana",
+        "imageUrl": "https://i.imgur.com/12UsEsi.png"
+    },
+    {
+        "id": 6,
+        "name": "Dahyun",
+        "imageUrl": "https://i.imgur.com/12UsEsi.png"
+    },
+    {
+        "id": 7,
+        "name": "Jeongyeon",
+        "imageUrl": "https://i.imgur.com/12UsEsi.png"
+    },
+    {
+        "id": 8,
+        "name": "Mina",
+        "imageUrl": "https://i.imgur.com/12UsEsi.png"
+    },
+    {
+        "id": 9,
+        "name": "Chaeyoung",
+        "imageUrl": "https://i.imgur.com/12UsEsi.png"
+    }
+]

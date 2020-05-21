@@ -1,6 +1,8 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { BracketOption } from './bracket-option.model';
 
+import  *  as  data  from  './bracket-options.json';
+
 @Component({
   selector: 'app-bracket',
   templateUrl: './bracket.component.html',
@@ -18,21 +20,11 @@ export class BracketComponent implements OnInit {
 
   ngOnInit(): void {
     this.initBracket();
-    this.randomizeBracket();
     this.startBracketCompetition();
   }
 
-  initBracket() {
-    for(let i = 0; i < 8; i++) {
-      let bracketOption = new BracketOption();
-      bracketOption.name = 'Test' + i;
-      bracketOption.imageUrl = 'https://i.imgur.com/12UsEsi.png';
-      this.bracketOptions.push(bracketOption);
-    }
-    //console.log(this.bracketOptions);
-  }
-
   randomizeBracket() {
+    console.log('Randomizing bracket');
     //Randomize order of list
     for (let i = this.bracketOptions.length - 1; i > 0 ; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -41,7 +33,24 @@ export class BracketComponent implements OnInit {
     console.log(this.bracketOptions);
   }
 
+  initBracket() {
+    console.log('Initializing bracket');
+    this.bracketOptions = (data as any).default;
+    this.randomizeBracket();
+    // Limit the data to bracket values (2,4,8,16,32,64, etc)
+    this.bracketOptions = this.bracketOptions.slice(0,8);
+    console.log(this.bracketOptions);
+    //FOR TESTING
+    // for(let i = 0; i < 8; i++) {
+    //   let bracketOption = new BracketOption();
+    //   bracketOption.name = 'Test' + i;
+    //   bracketOption.imageUrl = 'https://i.imgur.com/12UsEsi.png';
+    //   this.bracketOptions.push(bracketOption);
+    // }
+  }
+
   startBracketCompetition() {
+    console.log('Starting bracket competition');
     this.choice1 = this.bracketOptions[this.bracketIndex];
     //console.log(this.choice1);
     this.choice2 = this.bracketOptions[this.bracketIndex + 1];
@@ -71,6 +80,7 @@ export class BracketComponent implements OnInit {
       //Clear the storage/selected bracket
       this.bracketIndex = 0;
       this.bracketOptions = this.bracketOptionsNext;
+      this.randomizeBracket();
       this.bracketOptionsNext = [];
       this.choice1 = this.bracketOptions[this.bracketIndex];
       this.choice2 = this.bracketOptions[this.bracketIndex + 1];
