@@ -21,6 +21,13 @@ export class FinalResultComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('Got to final result');
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.id = +params['id'];
+          this.getBracketOption(this.id);
+        }
+      );
   }
 
   getBracketOption(id: number) {
