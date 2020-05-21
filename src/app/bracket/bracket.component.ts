@@ -51,7 +51,7 @@ export class BracketComponent implements OnInit {
     this.bracketOptions = (data as any).default.bracketOptions;
     this.randomizeBracket();
     // Limit the data to bracket values (2,4,8,16,32,64, etc)
-    this.bracketOptions = this.bracketOptions.slice(0,8);
+    this.bracketOptions = this.bracketOptions.slice(0,64);
     console.log(this.bracketOptions);
     //FOR TESTING
     // for(let i = 0; i < 8; i++) {
