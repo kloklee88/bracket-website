@@ -1,5 +1,6 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { BracketOption } from './bracket-option.model';
+import { Router, ActivatedRoute, ParamMap, Params } from '@angular/router';
 
 import  *  as  data  from  './bracket-options.json';
 
@@ -15,11 +16,21 @@ export class BracketComponent implements OnInit {
   selectedChoice: BracketOption;
   choice1: BracketOption;
   choice2: BracketOption;
+  counter: number = 1;
   bracketIndex: number = 0;
+  id: number;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.id = +params['id'];
+        }
+      );
     this.initBracket();
     this.startBracketCompetition();
   }
@@ -64,13 +75,18 @@ export class BracketComponent implements OnInit {
     console.log(selectedOption);
     this.bracketOptionsNext.push(selectedOption);
     this.bracketIndex = this.bracketIndex + 2;
+    console.log(this.bracketOptions.length);
     if(this.bracketOptions.length == 2) {
       //TODO: Redirect to new page with final result
       console.log('Finished ENTIRE bracket');
+      this.id = selectedOption.id;
+      //this.router.navigate(['final-result'], {relativeTo: this.route});
+      this.router.navigate(['../final-result', this.id], {relativeTo: this.route});
     } else if(this.bracketIndex + 1 < this.bracketOptions.length) {
       //Change page to the next options
       this.choice1 = this.bracketOptions[this.bracketIndex];
       this.choice2 = this.bracketOptions[this.bracketIndex + 1];
+      this.counter++;
       //console.log(this.choice1);
       //console.log(this.choice2);
     } else {
@@ -81,6 +97,7 @@ export class BracketComponent implements OnInit {
       //Replace bracket list with new selected options
       //Clear the storage/selected bracket
       this.bracketIndex = 0;
+      this.counter = 1;
       this.bracketOptions = this.bracketOptionsNext;
       this.randomizeBracket();
       this.bracketOptionsNext = [];

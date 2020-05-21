@@ -13,6 +13,7 @@ import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AboutComponent } from './about/about.component';
 import { DeveloperToolsComponent } from './developer-tools/developer-tools.component';
+import { FinalResultComponent } from './bracket/final-result/final-result.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DeveloperToolsComponent } from './developer-tools/developer-tools.compo
     HeaderComponent,
     BracketComponent,
     AboutComponent,
-    DeveloperToolsComponent
+    DeveloperToolsComponent,
+    FinalResultComponent
   ],
   imports: [
     BrowserModule,
