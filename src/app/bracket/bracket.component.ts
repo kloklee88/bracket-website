@@ -42,13 +42,12 @@ export class BracketComponent implements OnInit {
     });
 
     const subscribeDialog = dialogRef.componentInstance.dialogOutputEmitter.subscribe((data) => {
-      console.log('dialog data', data);
-      this.initBracket(data.bracketSize, data.groups);
+      console.log('Dialog data', data);
+      this.initBracket(data.bracketSize, data.group);
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      console.log(result);
     });
   }
 
@@ -59,7 +58,6 @@ export class BracketComponent implements OnInit {
       const j = Math.floor(Math.random() * (i + 1));
         [this.bracketOptions[i], this.bracketOptions[j]] = [this.bracketOptions[j], this.bracketOptions[i]];
     }
-    console.log(this.bracketOptions);
   }
 
   initBracket(bracketSize: number, groups: string[]) {
@@ -67,6 +65,8 @@ export class BracketComponent implements OnInit {
     this.bracketTitle = (data as any).default.bracketTitle;
     this.bracketOptions = (data as any).default.bracketOptions;
     this.randomizeBracket();
+    // Filter out the groups that we want
+    this.bracketOptions = this.bracketOptions.filter(x => groups.includes(x.group));
     // Limit the data to bracket values (2,4,8,16,32,64, etc)
     this.bracketOptions = this.bracketOptions.slice(0, bracketSize);
     console.log(this.bracketOptions);
@@ -87,7 +87,6 @@ export class BracketComponent implements OnInit {
     console.log(selectedOption);
     this.bracketOptionsNext.push(selectedOption);
     this.bracketIndex = this.bracketIndex + 2;
-    console.log(this.bracketOptions.length);
     if(this.bracketOptions.length == 2) {
       //Redirect to new page with final result
       console.log('Finished ENTIRE bracket');
@@ -101,7 +100,6 @@ export class BracketComponent implements OnInit {
     } else {
       console.log('Finished bracket');
       console.log('Starting next bracket');
-      console.log(this.bracketOptionsNext);
       //Restart the bracket index
       //Replace bracket list with new selected options
       //Clear the storage/selected bracket

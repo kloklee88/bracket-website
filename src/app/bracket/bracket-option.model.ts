@@ -1,5 +1,6 @@
 export class BracketOption {
     public id: number;
-    public name: String;
-    public imageUrl: String;
+    public name: string;
+    public group: string;
+    public imageUrl: string;
   }
