@@ -3,6 +3,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormControl } from '@angular/forms';
 import { MatOption } from '@angular/material/core';
 
+import  *  as  data  from  '../bracket-options.json';
+
 export class DialogData {
   group: string[];
   bracketSize: number;
@@ -17,7 +19,7 @@ export class DialogData {
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.css']
 })
-export class DialogComponent {
+export class DialogComponent implements OnInit {
   bracketSizes: number[] = [2,4,8,16,32,64];
   groups = new FormControl();
   groupList: string[] = ['Twice', 'Oh My Girl', 'Blackpink', 'Red Velvet'];
@@ -29,6 +31,12 @@ export class DialogComponent {
     public dialogRef: MatDialogRef<DialogComponent>
     ) {}
     //,@Inject(MAT_DIALOG_DATA) public data: DialogData
+
+  ngOnInit(): void {
+    //console.log((data as any).default.bracketOptions);
+    //this.groupList = [...new Set((data as any).default.bracketOptions.map(x => x.group))] as string[];
+    //console.log(this.groupList);
+  }
 
   onNoClick(): void {
     this.dialogRef.close();

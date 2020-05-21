@@ -30,7 +30,6 @@ export class BracketComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    //this.initBracket();
     this.openDialog();
   }
 
@@ -50,7 +49,6 @@ export class BracketComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       console.log(result);
-      //this.initBracket(8);
     });
   }
 
@@ -81,9 +79,7 @@ export class BracketComponent implements OnInit {
     // }
     console.log('Starting bracket competition');
     this.choice1 = this.bracketOptions[this.bracketIndex];
-    //console.log(this.choice1);
     this.choice2 = this.bracketOptions[this.bracketIndex + 1];
-    //console.log(this.choice2);
   }
 
   selectBracketOption(selectedOption: BracketOption) {
@@ -93,18 +89,15 @@ export class BracketComponent implements OnInit {
     this.bracketIndex = this.bracketIndex + 2;
     console.log(this.bracketOptions.length);
     if(this.bracketOptions.length == 2) {
-      //TODO: Redirect to new page with final result
+      //Redirect to new page with final result
       console.log('Finished ENTIRE bracket');
       this.id = selectedOption.id;
-      //this.router.navigate(['final-result'], {relativeTo: this.route});
       this.router.navigate(['../final-result', this.id], {relativeTo: this.route});
     } else if(this.bracketIndex + 1 < this.bracketOptions.length) {
       //Change page to the next options
       this.choice1 = this.bracketOptions[this.bracketIndex];
       this.choice2 = this.bracketOptions[this.bracketIndex + 1];
       this.counter++;
-      //console.log(this.choice1);
-      //console.log(this.choice2);
     } else {
       console.log('Finished bracket');
       console.log('Starting next bracket');
@@ -119,8 +112,6 @@ export class BracketComponent implements OnInit {
       this.bracketOptionsNext = [];
       this.choice1 = this.bracketOptions[this.bracketIndex];
       this.choice2 = this.bracketOptions[this.bracketIndex + 1];
-      //console.log(this.choice1);
-      //console.log(this.choice2);
     }
   }
 
