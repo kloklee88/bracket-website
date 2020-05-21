@@ -44,7 +44,7 @@ export class BracketComponent implements OnInit {
 
     const subscribeDialog = dialogRef.componentInstance.dialogOutputEmitter.subscribe((data) => {
       console.log('dialog data', data);
-      this.initBracket(data.bracketSize);
+      this.initBracket(data.bracketSize, data.groups);
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -64,7 +64,7 @@ export class BracketComponent implements OnInit {
     console.log(this.bracketOptions);
   }
 
-  initBracket(bracketSize: number) {
+  initBracket(bracketSize: number, groups: string[]) {
     console.log('Initializing bracket');
     this.bracketTitle = (data as any).default.bracketTitle;
     this.bracketOptions = (data as any).default.bracketOptions;

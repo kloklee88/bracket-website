@@ -10,3 +10,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-size: 32px;
     text-align: center;
 }
+.mat-option.mat-selected:not(.mat-option-disabled) {
+    color: white !important;
+}
+.mat-form-field.mat-focused .mat-form-field-label {
+    color: white !important;
+}
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+    color: white !important;
+}
+.mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: white !important;
+}

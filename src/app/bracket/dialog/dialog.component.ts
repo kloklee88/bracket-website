@@ -1,6 +1,7 @@
-import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Inject, Output, EventEmitter, ViewChild } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormControl } from '@angular/forms';
+import { MatOption } from '@angular/material/core';
 
 export class DialogData {
   group: string[];
@@ -22,6 +23,7 @@ export class DialogComponent {
   groupList: string[] = ['Twice', 'Oh My Girl', 'Blackpink', 'Red Velvet'];
   data: DialogData = new DialogData(0);
   @Output() dialogOutputEmitter = new EventEmitter();
+  @ViewChild('allSelected') private allSelected: MatOption;
 
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>
@@ -34,6 +36,24 @@ export class DialogComponent {
 
   submitBracketInfo() {
     this.dialogOutputEmitter.emit(this.data);
+  }
+
+  tosslePerOne(all){ 
+    if (this.allSelected.selected) {  
+        this.allSelected.deselect();
+        return false;
+    }
+    if(this.groups.value.length==this.groupList.length) {
+      this.allSelected.select();
+    }
+  }
+
+  toggleAllSelection() {
+    if (this.allSelected.selected) {
+      this.groups.patchValue([...this.groupList, 0]);
+    } else {
+      this.groups.patchValue([]);
+    }
   }
 
 }

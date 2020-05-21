@@ -10,7 +10,6 @@
   </mat-form-field>
   <mat-form-field>
     <mat-label>Group</mat-label>
-    <input matInput [(ngModel)]="data.group">
     <mat-select [formControl]="groups" multiple>
         <mat-select-trigger>
           {{groups.value ? groups.value[0] : ''}}
@@ -18,11 +17,12 @@
             (+{{groups.value.length - 1}} {{groups.value?.length === 2 ? 'other' : 'others'}})
           </span>
         </mat-select-trigger>
-        <mat-option *ngFor="let group of groupList" [value]="group">{{group}}</mat-option>
+        <mat-option #allSelected (click)="toggleAllSelection()" [value]="0">Select/Deselect All</mat-option>
+        <mat-option *ngFor="let group of groupList" [value]="group" (click)="tosslePerOne(allSelected.viewValue)">{{group}}</mat-option>
       </mat-select>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Cancel</button>
-  <button mat-button (click)="submitBracketInfo()" [mat-dialog-close] cdkFocusInitial>Submit</button>
+  <button mat-button color="accent" (click)="submitBracketInfo()" [mat-dialog-close] cdkFocusInitial>Submit</button>
 </div>
