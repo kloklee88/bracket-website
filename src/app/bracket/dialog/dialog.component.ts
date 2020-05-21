@@ -27,15 +27,12 @@ export class DialogComponent implements OnInit {
   @Output() dialogOutputEmitter = new EventEmitter();
   @ViewChild('allSelected') private allSelected: MatOption;
 
-  constructor(
-    public dialogRef: MatDialogRef<DialogComponent>
-    ) {}
-    //,@Inject(MAT_DIALOG_DATA) public data: DialogData
+  constructor(public dialogRef: MatDialogRef<DialogComponent>) {}
 
   ngOnInit(): void {
-    //console.log((data as any).default.bracketOptions);
-    //this.groupList = [...new Set((data as any).default.bracketOptions.map(x => x.group))] as string[];
-    //console.log(this.groupList);
+    console.log((data as any).default.bracketOptions);
+    this.groupList = [...new Set((data as any).default.bracketOptions.map(x => x.group))] as string[];
+    console.log(this.groupList);
   }
 
   onNoClick(): void {
