@@ -1,47 +1,50 @@
-[
-    {
-        "id": 1,
-        "name": "Jihyo",
-        "imageUrl": "https://i.imgur.com/12UsEsi.png"
-    },
-    {
-        "id": 2,
-        "name": "Nayeon",
-        "imageUrl": "https://i.imgur.com/12UsEsi.png"
-    },
-    {
-        "id": 3,
-        "name": "Tsuyu",
-        "imageUrl": "https://i.imgur.com/12UsEsi.png"
-    },
-    {
-        "id": 4,
-        "name": "Momo",
-        "imageUrl": "https://i.imgur.com/12UsEsi.png"
-    },
-    {
-        "id": 5,
-        "name": "Sana",
-        "imageUrl": "https://i.imgur.com/12UsEsi.png"
-    },
-    {
-        "id": 6,
-        "name": "Dahyun",
-        "imageUrl": "https://i.imgur.com/12UsEsi.png"
-    },
-    {
-        "id": 7,
-        "name": "Jeongyeon",
-        "imageUrl": "https://i.imgur.com/12UsEsi.png"
-    },
-    {
-        "id": 8,
-        "name": "Mina",
-        "imageUrl": "https://i.imgur.com/12UsEsi.png"
-    },
-    {
-        "id": 9,
-        "name": "Chaeyoung",
-        "imageUrl": "https://i.imgur.com/12UsEsi.png"
-    }
-]
+{
+    "bracketTitle" : "Kpop Girl Group World Cup",
+    "bracketOptions": [
+        {
+            "id": 1,
+            "name": "Jihyo",
+            "imageUrl": "https://i.imgur.com/Nev0thU.png"
+        },
+        {
+            "id": 2,
+            "name": "Nayeon",
+            "imageUrl": "https://i.imgur.com/77FXbIw.png"
+        },
+        {
+            "id": 3,
+            "name": "Tsuyu",
+            "imageUrl": "https://i.imgur.com/EL2ZuwB.png"
+        },
+        {
+            "id": 4,
+            "name": "Momo",
+            "imageUrl": "https://i.imgur.com/FaY4Zlb.png"
+        },
+        {
+            "id": 5,
+            "name": "Sana",
+            "imageUrl": "https://i.imgur.com/ADIgkik.png"
+        },
+        {
+            "id": 6,
+            "name": "Dahyun",
+            "imageUrl": "https://i.imgur.com/4SFGdxS.png"
+        },
+        {
+            "id": 7,
+            "name": "Jeongyeon",
+            "imageUrl": "https://i.imgur.com/3Xr8OgY.png"
+        },
+        {
+            "id": 8,
+            "name": "Mina",
+            "imageUrl": "https://i.imgur.com/w6f5r1q.png"
+        },
+        {
+            "id": 9,
+            "name": "Chaeyoung",
+            "imageUrl": "https://i.imgur.com/eG3WviP.png"
+        }
+    ]
+}

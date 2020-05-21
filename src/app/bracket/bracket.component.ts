@@ -9,6 +9,7 @@ import  *  as  data  from  './bracket-options.json';
   styleUrls: ['./bracket.component.css']
 })
 export class BracketComponent implements OnInit {
+  bracketTitle: String;
   bracketOptions: BracketOption[] = [];
   bracketOptionsNext: BracketOption[] = [];
   selectedChoice: BracketOption;
@@ -35,7 +36,8 @@ export class BracketComponent implements OnInit {
 
   initBracket() {
     console.log('Initializing bracket');
-    this.bracketOptions = (data as any).default;
+    this.bracketTitle = (data as any).default.bracketTitle;
+    this.bracketOptions = (data as any).default.bracketOptions;
     this.randomizeBracket();
     // Limit the data to bracket values (2,4,8,16,32,64, etc)
     this.bracketOptions = this.bracketOptions.slice(0,8);
