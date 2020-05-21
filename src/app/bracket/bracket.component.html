@@ -1,6 +1,6 @@
 <div fxFill fxLayout='column' class='mainContainer'>
-    <div fxLayout='row' fxFlex='5' fxLayoutAlign='center' fxLayoutGap='10px'>
-        <h1 class='bracketTitle'>{{bracketTitle}}</h1> <h1>({{counter}}/{{bracketOptions.length/2}})</h1>
+    <div class='bracketTitle' fxLayout='row' fxFlex='5' fxLayoutAlign='center' fxLayoutGap='10px'>
+        <span>{{bracketTitle}}</span> <span>({{counter}}/{{bracketOptions.length/2}})</span>
     </div>
     <div fxFlex fxLayout='row' fxLayoutAlign='center' fxLayoutGap='10px'>
         <mat-card fxFlex='30' class='choice' (click)='selectBracketOption(choice1)'>
@@ -8,6 +8,7 @@
             <br><br>
             <img src='{{choice1.imageUrl}}' width = '500' height = '800'>
         </mat-card>
+        <div class='vs'>VS</div>
         <mat-card fxFlex='30' class='choice' (click)='selectBracketOption(choice2)'>
             <span>{{choice2.name}}</span>
             <br><br>
