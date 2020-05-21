@@ -11,12 +11,16 @@ import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AboutComponent } from './about/about.component';
+import { DeveloperToolsComponent } from './developer-tools/developer-tools.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    BracketComponent
+    BracketComponent,
+    AboutComponent,
+    DeveloperToolsComponent
   ],
   imports: [
     BrowserModule,
