@@ -1,8 +1,10 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, Output, Input } from '@angular/core';
 import { BracketOption } from './bracket-option.model';
 import { Router, ActivatedRoute, ParamMap, Params } from '@angular/router';
 
 import  *  as  data  from  './bracket-options.json';
+import { DialogComponent } from './dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-bracket',
@@ -10,7 +12,7 @@ import  *  as  data  from  './bracket-options.json';
   styleUrls: ['./bracket.component.css']
 })
 export class BracketComponent implements OnInit {
-  bracketTitle: String;
+  bracketTitle: string;
   bracketOptions: BracketOption[] = [];
   bracketOptionsNext: BracketOption[] = [];
   selectedChoice: BracketOption;
@@ -19,20 +21,37 @@ export class BracketComponent implements OnInit {
   counter: number = 1;
   bracketIndex: number = 0;
   id: number;
+  bracketSize: number;
+  group: string[];
 
   constructor(
+    public dialog: MatDialog,
     private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit(): void {
-    this.route.params
-      .subscribe(
-        (params: Params) => {
-          this.id = +params['id'];
-        }
-      );
-    this.initBracket();
-    this.startBracketCompetition();
+    //this.initBracket();
+    this.openDialog();
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '350px',
+      height: '350px',
+      disableClose: true,
+      data: {bracketSize: this.bracketSize, group: this.group}
+    });
+
+    const subscribeDialog = dialogRef.componentInstance.dialogOutputEmitter.subscribe((data) => {
+      console.log('dialog data', data);
+      this.initBracket(data.bracketSize);
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+      //this.initBracket(8);
+    });
   }
 
   randomizeBracket() {
@@ -45,13 +64,13 @@ export class BracketComponent implements OnInit {
     console.log(this.bracketOptions);
   }
 
-  initBracket() {
+  initBracket(bracketSize: number) {
     console.log('Initializing bracket');
     this.bracketTitle = (data as any).default.bracketTitle;
     this.bracketOptions = (data as any).default.bracketOptions;
     this.randomizeBracket();
     // Limit the data to bracket values (2,4,8,16,32,64, etc)
-    this.bracketOptions = this.bracketOptions.slice(0,64);
+    this.bracketOptions = this.bracketOptions.slice(0, bracketSize);
     console.log(this.bracketOptions);
     //FOR TESTING
     // for(let i = 0; i < 8; i++) {
@@ -60,9 +79,6 @@ export class BracketComponent implements OnInit {
     //   bracketOption.imageUrl = 'https://i.imgur.com/12UsEsi.png';
     //   this.bracketOptions.push(bracketOption);
     // }
-  }
-
-  startBracketCompetition() {
     console.log('Starting bracket competition');
     this.choice1 = this.bracketOptions[this.bracketIndex];
     //console.log(this.choice1);

@@ -1,18 +1,19 @@
 <div fxFill fxLayout='column' class='mainContainer'>
-    <div class='bracketTitle' fxLayout='row' fxFlex='5' fxLayoutAlign='center' fxLayoutGap='10px'>
-        <span>{{bracketTitle}}</span> <span>({{counter}}/{{bracketOptions.length/2}})</span>
-    </div>
-    <div fxFlex fxLayout='row' fxLayoutAlign='center' fxLayoutGap='10px'>
-        <mat-card fxFlex='30' class='choice' (click)='selectBracketOption(choice1)'>
-            <span>{{choice1.name}}</span>
-            <br><br>
-            <img src='{{choice1.imageUrl}}' width = '500' height = '800'>
-        </mat-card>
-        <div class='vs'>VS</div>
-        <mat-card fxFlex='30' class='choice' (click)='selectBracketOption(choice2)'>
-            <span>{{choice2.name}}</span>
-            <br><br>
-            <img src='{{choice2.imageUrl}}' width = '500' height = '800'>
-        </mat-card>
-    </div>
+        <div class='bracketTitle' fxLayout='row' fxFlex='5' fxLayoutAlign='center' fxLayoutGap='10px' *ngIf="choice1 && choice2 && bracketOptions">
+            <span>{{bracketTitle}}</span> <span>({{counter}}/{{bracketOptions.length/2}})</span>
+        </div>
+        <div fxFlex fxLayout='row' fxLayoutAlign='center' fxLayoutGap='10px' *ngIf="choice1 && choice2 && bracketOptions">
+            <mat-card fxFlex='30' class='choice' (click)='selectBracketOption(choice1)'>
+                <span>{{choice1.name}}</span>
+                <br><br>
+                <img src='{{choice1.imageUrl}}' width = '500' height = '800'>
+            </mat-card>
+            <div class='vs'>VS</div>
+            <mat-card fxFlex='30' class='choice' (click)='selectBracketOption(choice2)'>
+                <span>{{choice2.name}}</span>
+                <br><br>
+                <img src='{{choice2.imageUrl}}' width = '500' height = '800'>
+            </mat-card>
+        </div>
 </div>
+

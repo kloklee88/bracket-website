@@ -14,6 +14,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AboutComponent } from './about/about.component';
 import { DeveloperToolsComponent } from './developer-tools/developer-tools.component';
 import { FinalResultComponent } from './bracket/final-result/final-result.component';
+import { DialogComponent } from './bracket/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FinalResultComponent } from './bracket/final-result/final-result.compon
     BracketComponent,
     AboutComponent,
     DeveloperToolsComponent,
-    FinalResultComponent
+    FinalResultComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,

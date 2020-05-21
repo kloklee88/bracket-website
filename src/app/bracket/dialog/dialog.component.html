@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Bracket Options</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Bracket Size</mat-label>
+    <input matInput [(ngModel)]="data.bracketSize">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Group</mat-label>
+    <input matInput [(ngModel)]="data.group">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="submitBracketInfo()" [mat-dialog-close] cdkFocusInitial>Submit</button>
+</div>
