@@ -1,28 +1,30 @@
-<h1 mat-dialog-title>Bracket Options</h1>
-<div mat-dialog-content>
-  <mat-form-field>
-    <mat-label>Bracket Size</mat-label>
-    <mat-select [(ngModel)]="data.bracketSize" name="bracketSize">
-        <mat-option *ngFor="let bracketSize of bracketSizes" [value]="bracketSize">
-          {{bracketSize}}
-        </mat-option>
-      </mat-select>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Group</mat-label>
-    <mat-select [(ngModel)]="data.group" [formControl]="groups" multiple>
-        <mat-select-trigger>
-          {{groups.value ? groups.value[0] : ''}}
-          <span *ngIf="groups.value?.length > 1" class="example-additional-selection">
-            (+{{groups.value.length - 1}} {{groups.value?.length === 2 ? 'other' : 'others'}})
-          </span>
-        </mat-select-trigger>
-        <mat-option #allSelected (click)="toggleAllSelection()" [value]="0">Select/Deselect All</mat-option>
-        <mat-option *ngFor="let group of groupList" [value]="group" (click)="tosslePerOne(allSelected.viewValue)">{{group}}</mat-option>
-      </mat-select>
-  </mat-form-field>
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Cancel</button>
-  <button mat-button color="accent" (click)="submitBracketInfo()" [mat-dialog-close] cdkFocusInitial>Submit</button>
+<div class="dialog">
+  <h1 mat-dialog-title>Bracket Options</h1>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Bracket Size</mat-label>
+      <mat-select [(ngModel)]="data.bracketSize" name="bracketSize">
+          <mat-option *ngFor="let bracketSize of bracketSizes" [value]="bracketSize">
+            {{bracketSize}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Group</mat-label>
+      <mat-select [(ngModel)]="data.group" [formControl]="groups" multiple>
+          <mat-select-trigger>
+            {{groups.value ? groups.value[0] : ''}}
+            <span *ngIf="groups.value?.length > 1" class="example-additional-selection">
+              (+{{groups.value.length - 1}} {{groups.value?.length === 2 ? 'other' : 'others'}})
+            </span>
+          </mat-select-trigger>
+          <mat-option #allSelected (click)="toggleAllSelection()" [value]="0">Select/Deselect All</mat-option>
+          <mat-option *ngFor="let group of groupList" [value]="group" (click)="tosslePerOne(allSelected.viewValue)">{{group}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button color="accent" (click)="submitBracketInfo()" [mat-dialog-close] cdkFocusInitial>Submit</button>
+  </div>
 </div>
