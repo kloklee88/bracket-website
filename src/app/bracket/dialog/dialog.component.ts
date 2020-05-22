@@ -4,6 +4,7 @@ import { FormControl } from '@angular/forms';
 import { MatOption } from '@angular/material/core';
 
 import  *  as  data  from  '../bracket-options.json';
+import { ActivatedRoute, Router } from '@angular/router';
 
 export class DialogData {
   group: string[];
@@ -27,7 +28,9 @@ export class DialogComponent implements OnInit {
   @Output() dialogOutputEmitter = new EventEmitter();
   @ViewChild('allSelected') private allSelected: MatOption;
 
-  constructor(public dialogRef: MatDialogRef<DialogComponent>) {}
+  constructor(public dialogRef: MatDialogRef<DialogComponent>,
+    private route: ActivatedRoute,
+    private router: Router) {}
 
   ngOnInit(): void {
     console.log((data as any).default.bracketOptions);
@@ -37,6 +40,7 @@ export class DialogComponent implements OnInit {
 
   onNoClick(): void {
     this.dialogRef.close();
+    this.router.navigate(['../about'], {relativeTo: this.route});
   }
 
   submitBracketInfo() {
