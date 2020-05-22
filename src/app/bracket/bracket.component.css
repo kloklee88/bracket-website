@@ -1,6 +1,7 @@
 .bracketTitle {
+    text-align: center;
     font-size: 32px;
-    padding: 10px;
+    padding: 15px 0;
 }
 .vs {
     font-size: 32px;

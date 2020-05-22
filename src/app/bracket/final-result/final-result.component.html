@@ -1,10 +1,10 @@
-<div fxFill fxLayout='column' class='mainContainer'>
-    <div fxFlex fxLayout='row' fxFlex='100%' fxLayoutAlign='center'>
-        <mat-card fxFlex='30%' class='choice'>
-            <span>WINNER</span>
-            <br><br>
-            <span>{{finalChoice.name}}</span>
-            <br><br>
+<div fxLayout='column' class='mainContainer'>
+    <div fxLayoutAlign='center'>
+        <h1>WINNER</h1>
+    </div>
+    <div fxLayout='row' fxLayoutAlign='center'>
+        <mat-card fxFlex='35%' class='choice'>
+            <mat-card-title>{{finalChoice.name}}</mat-card-title>
             <img src='{{finalChoice.imageUrl}}'>
         </mat-card>
     </div>
