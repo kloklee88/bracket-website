@@ -1,8 +1,8 @@
 <body fxFlexFill fxLayout='column' class='mainContainer'>
-    <div class='bracketTitle' fxLayout='row' fxFlex='12%' fxLayoutAlign='center' fxLayoutGap='10px' *ngIf="choice1 && choice2 && bracketOptions">
+    <div class='bracketTitle' fxLayout='row' fxFlex='10%' fxLayoutAlign='center' fxLayoutGap='10px' *ngIf="choice1 && choice2 && bracketOptions">
         <span>{{bracketTitle}}</span> <span>({{counter}}/{{bracketOptions.length/2}})</span>
     </div>
-    <div fxFlex fxLayout='row' fxLayoutAlign='center' fxFlex='88%' fxLayoutGap='10px' *ngIf="choice1 && choice2 && bracketOptions">
+    <div fxFlex fxLayout='row' fxLayoutAlign='center' fxFlex='90%' fxLayoutGap='10px' *ngIf="choice1 && choice2 && bracketOptions">
         <mat-card fxFlex='30%' class='choice' (click)='selectBracketOption(choice1)'>
             <span>{{choice1.name}}</span>
             <br><br>
