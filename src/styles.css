@@ -10,9 +10,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .choice {
     text-align: center;
 }
-img {
-    max-width: 100%;
-    height: 80vh;
+.img-choice {
+    max-width: 100% !important;
+    height: 80vh !important;
+}
+.mat-icon {
+    font-size: 35px;
+    width: 35px !important;
+    height: 35px !important;
 }
 .mat-option.mat-selected:not(.mat-option-disabled) {
     color: white !important;

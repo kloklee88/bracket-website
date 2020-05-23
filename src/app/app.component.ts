@@ -14,7 +14,7 @@ export class AppComponent {
   ){
     this.matIconRegistry.addSvgIcon(
       "simkung",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/simkung_logo_1.svg")
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/svg/simkung_logo.svg")
     );
   }
 }
