@@ -3,8 +3,8 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { FormControl } from '@angular/forms';
 import { MatOption } from '@angular/material/core';
 
-import  *  as  data  from  '../bracket-options.json';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BracketService } from '../bracket.service';
 
 export class DialogData {
   group: string[];
@@ -28,11 +28,11 @@ export class DialogComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<DialogComponent>,
     private route: ActivatedRoute,
-    private router: Router) {}
+    private router: Router,
+    private bracketService: BracketService) {}
 
   ngOnInit(): void {
-    console.log((data as any).default.bracketOptions);
-    this.groupList = [...new Set((data as any).default.bracketOptions.map(x => x.group))] as string[];
+    this.groupList = [...new Set(this.bracketService.getBracketData().bracketOptions.map(x => x.group))] as string[];
     console.log(this.groupList);
   }
 

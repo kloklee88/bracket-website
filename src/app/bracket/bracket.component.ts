@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { BracketOption } from './bracket-option.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import  *  as  data  from  './bracket-options.json';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { BracketService } from './bracket.service';
 
 @Component({
   selector: 'app-bracket',
@@ -56,7 +56,8 @@ export class BracketComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private route: ActivatedRoute,
-    private router: Router) {}
+    private router: Router,
+    private bracketService: BracketService) {}
 
   ngOnInit(): void {
     this.openDialog();
@@ -91,8 +92,8 @@ export class BracketComponent implements OnInit {
 
   initBracket(bracketSize: number, groups: string[]) {
     console.log('Initializing bracket');
-    this.bracketTitle = (data as any).default.bracketTitle;
-    this.bracketOptions = (data as any).default.bracketOptions;
+    this.bracketTitle = this.bracketService.getBracketData().bracketTitle;
+    this.bracketOptions = this.bracketService.getBracketData().bracketOptions;
     this.randomizeBracket();
     // Filter out the groups that we want
     this.bracketOptions = this.bracketOptions.filter(x => groups.includes(x.group));
