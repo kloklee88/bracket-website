@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BracketOption } from '../bracket-option.model';
 
-import { Router, ActivatedRoute, ParamMap, Params } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import  *  as  data  from  '../bracket-options.json';
 

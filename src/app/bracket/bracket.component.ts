@@ -1,6 +1,6 @@
-import { Component, OnInit, OnChanges, Output, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BracketOption } from './bracket-option.model';
-import { Router, ActivatedRoute, ParamMap, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import  *  as  data  from  './bracket-options.json';
 import { DialogComponent } from './dialog/dialog.component';
@@ -27,7 +27,7 @@ export class BracketComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router) {}
 
   ngOnInit(): void {
     this.openDialog();
