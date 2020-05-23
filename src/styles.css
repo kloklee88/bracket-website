@@ -2,7 +2,7 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.mainContainer {
+.main-container {
     min-height: 100%;
     background-color: #222222;
     color: white;

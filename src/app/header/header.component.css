@@ -1,0 +1,12 @@
+.header-title {
+    font-family: "Source Sans Pro",helvetica,arial,sans-serif;
+}
+.nav-tools {
+    margin-left: 100px; 
+}
+.bracket-button {
+    margin-left: 20px;
+}
+.menu-spacer {
+    flex: 1 1 auto;
+}

@@ -1,14 +1,24 @@
 <mat-toolbar color="primary">
     <button mat-icon-button>
-        <mat-icon>menu</mat-icon>
+        <!-- <mat-icon>favorite</mat-icon> -->
+        <mat-icon svgIcon="simkung"></mat-icon>
     </button>
-    <h1>Simkung (심쿵)</h1>
-    <span class="menu-spacer"></span>
-    <div>
-        <a mat-button [routerLink]="'/about'"> About </a>
-        <a mat-button [routerLink]="'/bracket'"> Bracket </a>
-        <a mat-button [routerLink]="'/developer-tools'"> Developer Tools </a>
+    <h1 class="header-title">Simkung (심쿵)</h1>
+    <div class="bracket-button">
+        <a mat-raised-button color="accent" [routerLink]="'/bracket'">Start Bracket</a>
     </div>
+    <div class="nav-tools">
+        <a mat-button [routerLink]="'/about'">About</a>
+        <a mat-button [routerLink]="'/developer-tools'">Developer Tools</a>
+    </div>
+    <span class="menu-spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor] = "menu">
+        <mat-icon>account_box</mat-icon>
+    </button>
+    <mat-menu #menu = "matMenu">
+        <button mat-menu-item>Log In</button>
+        <button mat-menu-item>Sign Up</button>
+    </mat-menu>
 </mat-toolbar>
 <div fxLayout="row wrap" fxLayoutAlign="center">
     <a href="#" mat-button routerLink="/">
