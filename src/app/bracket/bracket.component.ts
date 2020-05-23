@@ -5,13 +5,42 @@ import { Router, ActivatedRoute } from '@angular/router';
 import  *  as  data  from  './bracket-options.json';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-bracket',
   templateUrl: './bracket.component.html',
-  styleUrls: ['./bracket.component.css']
+  styleUrls: ['./bracket.component.css'],
+  animations: [
+    trigger('state1', [
+      state('normal', style({
+        transform: 'translateX(0)'
+      })),
+      state('selected', style({
+        transform: 'translateX(50px)'
+      })),
+      state('not-selected', style({
+        display: 'none'
+      })),
+      transition('normal => selected', animate(1000))
+    ]),
+    trigger('state2', [
+      state('normal', style({
+        transform: 'translateX(0)'
+      })),
+      state('selected', style({
+        transform: 'translateX(-50px)'
+      })),
+      state('not-selected', style({
+        display: 'none'
+      })),
+      transition('normal => selected', animate(1000))
+    ])
+  ]
 })
 export class BracketComponent implements OnInit {
+  state1 = 'normal';
+  state2 = 'normal';
   bracketTitle: string;
   bracketOptions: BracketOption[] = [];
   bracketOptionsNext: BracketOption[] = [];
@@ -82,7 +111,16 @@ export class BracketComponent implements OnInit {
     this.choice2 = this.bracketOptions[this.bracketIndex + 1];
   }
 
-  selectBracketOption(selectedOption: BracketOption) {
+  async selectBracketOption(selectedOption: BracketOption, choiceNumber: number) {
+    console.log(choiceNumber);
+    if(choiceNumber === 1) {
+      this.state1 = 'selected';
+      this.state2 = 'not-selected';
+    } else if(choiceNumber === 2) {
+      this.state2 = 'selected';
+      this.state1 = 'not-selected';
+    }
+    await this.delay(1000);
     //Save the selected choice into new array
     console.log(selectedOption);
     this.bracketOptionsNext.push(selectedOption);
@@ -111,6 +149,12 @@ export class BracketComponent implements OnInit {
       this.choice1 = this.bracketOptions[this.bracketIndex];
       this.choice2 = this.bracketOptions[this.bracketIndex + 1];
     }
+    this.state1 = 'normal';
+    this.state2 = 'normal';
+  }
+
+  private async delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms))
   }
 
 }
