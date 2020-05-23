@@ -9,10 +9,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DialogData {
   group: string[];
   bracketSize: number;
-
-  constructor(bracketSize) {
-    this.bracketSize = bracketSize;
-  }
 }
 
 @Component({
@@ -22,9 +18,11 @@ export class DialogData {
 })
 export class DialogComponent implements OnInit {
   bracketSizes: number[] = [2,4,8,16,32,64];
-  groups = new FormControl();
+  groupFormControl = new FormControl();
+  bracketSizeFormControl = new FormControl();
   groupList: string[] = ['Twice', 'Oh My Girl', 'Blackpink', 'Red Velvet'];
-  data: DialogData = new DialogData(0);
+  data: DialogData = new DialogData();
+  submitted: boolean = false;
   @Output() dialogOutputEmitter = new EventEmitter();
   @ViewChild('allSelected') private allSelected: MatOption;
 
@@ -44,7 +42,14 @@ export class DialogComponent implements OnInit {
   }
 
   submitBracketInfo() {
-    this.dialogOutputEmitter.emit(this.data);
+    console.log("Valid bracket size?", this.bracketSizeFormControl.valid);
+    console.log("Valid groups?", this.groupFormControl.valid);
+    this.submitted = true;
+    if (this.groupFormControl.valid && this.bracketSizeFormControl.valid) {
+      console.log("Submitted bracket options");
+      this.dialogRef.close();
+      this.dialogOutputEmitter.emit(this.data);
+    }
   }
 
   tosslePerOne(all){ 
@@ -52,16 +57,16 @@ export class DialogComponent implements OnInit {
         this.allSelected.deselect();
         return false;
     }
-    if(this.groups.value.length==this.groupList.length) {
+    if(this.groupFormControl.value.length==this.groupList.length) {
       this.allSelected.select();
     }
   }
 
   toggleAllSelection() {
     if (this.allSelected.selected) {
-      this.groups.patchValue([...this.groupList, 0]);
+      this.groupFormControl.patchValue([...this.groupList, 0]);
     } else {
-      this.groups.patchValue([]);
+      this.groupFormControl.patchValue([]);
     }
   }
 
