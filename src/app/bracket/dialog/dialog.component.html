@@ -22,7 +22,7 @@
             </span>
           </mat-select-trigger>
           <mat-option #allSelected (click)="toggleAllSelection()" [value]="0">Select/Deselect All</mat-option>
-          <mat-option *ngFor="let group of groupList" [value]="group" (click)="tosslePerOne(allSelected.viewValue)">{{group}}</mat-option>
+          <mat-option *ngFor="let group of groupList" [value]="group" (click)="tosslePerOne()">{{group}}</mat-option>
         </mat-select>
         <mat-error>Groups are required</mat-error>
     </mat-form-field>

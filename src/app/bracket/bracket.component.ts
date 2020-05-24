@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BracketOption } from './bracket-option.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -36,7 +36,7 @@ import { BracketService } from './bracket.service';
     ])
   ]
 })
-export class BracketComponent implements OnInit, OnChanges {
+export class BracketComponent implements OnInit {
   state1 = 'normal';
   state2 = 'normal';
   bracketTitle: string;
@@ -59,10 +59,6 @@ export class BracketComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.openDialog();
-  }
-
-  ngOnChanges(): void {
-    console.log('on change');
   }
 
   openDialog() {
