@@ -20,7 +20,7 @@ export class DialogComponent implements OnInit {
   bracketSizes: number[] = [2,4,8,16,32,64];
   groupFormControl = new FormControl();
   bracketSizeFormControl = new FormControl();
-  groupList: string[] = ['Twice', 'Oh My Girl', 'Blackpink', 'Red Velvet'];
+  groupList: string[] = [];
   data: DialogData = new DialogData();
   submitted: boolean = false;
   @Output() dialogOutputEmitter = new EventEmitter();
@@ -33,7 +33,6 @@ export class DialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.groupList = [...new Set(this.bracketService.getBracketData().bracketOptions.map(x => x.group))] as string[];
-    console.log(this.groupList);
   }
 
   onNoClick(): void {
@@ -42,17 +41,14 @@ export class DialogComponent implements OnInit {
   }
 
   submitBracketInfo() {
-    console.log("Valid bracket size?", this.bracketSizeFormControl.valid);
-    console.log("Valid groups?", this.groupFormControl.valid);
     this.submitted = true;
     if (this.groupFormControl.valid && this.bracketSizeFormControl.valid) {
-      console.log("Submitted bracket options");
       this.dialogRef.close();
       this.dialogOutputEmitter.emit(this.data);
     }
   }
 
-  tosslePerOne(all){ 
+  tosslePerOne(){ 
     if (this.allSelected.selected) {  
         this.allSelected.deselect();
         return false;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { BracketOption } from './bracket-option.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -14,7 +14,6 @@ import { BracketService } from './bracket.service';
   animations: [
     trigger('state1', [
       state('normal', style({
-        transform: 'translateX(0)'
       })),
       state('selected', style({
         transform: 'translateX(50px)'
@@ -26,7 +25,6 @@ import { BracketService } from './bracket.service';
     ]),
     trigger('state2', [
       state('normal', style({
-        transform: 'translateX(0)'
       })),
       state('selected', style({
         transform: 'translateX(-50px)'
@@ -38,7 +36,7 @@ import { BracketService } from './bracket.service';
     ])
   ]
 })
-export class BracketComponent implements OnInit {
+export class BracketComponent implements OnInit, OnChanges {
   state1 = 'normal';
   state2 = 'normal';
   bracketTitle: string;
@@ -63,6 +61,10 @@ export class BracketComponent implements OnInit {
     this.openDialog();
   }
 
+  ngOnChanges(): void {
+    console.log('on change');
+  }
+
   openDialog() {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '350px',
@@ -72,17 +74,11 @@ export class BracketComponent implements OnInit {
     });
 
     const subscribeDialog = dialogRef.componentInstance.dialogOutputEmitter.subscribe((data) => {
-      console.log('Dialog data', data);
       this.initBracket(data.bracketSize, data.group);
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
     });
   }
 
   randomizeBracket() {
-    console.log('Randomizing bracket');
     //Randomize order of list
     for (let i = this.bracketOptions.length - 1; i > 0 ; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -91,7 +87,6 @@ export class BracketComponent implements OnInit {
   }
 
   initBracket(bracketSize: number, groups: string[]) {
-    console.log('Initializing bracket');
     this.bracketTitle = this.bracketService.getBracketData().bracketTitle;
     this.bracketOptions = this.bracketService.getBracketData().bracketOptions;
     this.randomizeBracket();
@@ -99,21 +94,13 @@ export class BracketComponent implements OnInit {
     this.bracketOptions = this.bracketOptions.filter(x => groups.includes(x.group));
     // Limit the data to bracket values (2,4,8,16,32,64, etc)
     this.bracketOptions = this.bracketOptions.slice(0, bracketSize);
-    console.log(this.bracketOptions);
-    //FOR TESTING
-    // for(let i = 0; i < 8; i++) {
-    //   let bracketOption = new BracketOption();
-    //   bracketOption.name = 'Test' + i;
-    //   bracketOption.imageUrl = 'https://i.imgur.com/12UsEsi.png';
-    //   this.bracketOptions.push(bracketOption);
-    // }
-    console.log('Starting bracket competition');
+    // TODO: If bracket is not a perfect number, reduce it down to the next available option
     this.choice1 = this.bracketOptions[this.bracketIndex];
     this.choice2 = this.bracketOptions[this.bracketIndex + 1];
   }
 
   async selectBracketOption(selectedOption: BracketOption, choiceNumber: number) {
-    console.log(choiceNumber);
+    // Change state to show animations
     if(choiceNumber === 1) {
       this.state1 = 'selected';
       this.state2 = 'not-selected';
@@ -123,12 +110,10 @@ export class BracketComponent implements OnInit {
     }
     await this.delay(1000);
     //Save the selected choice into new array
-    console.log(selectedOption);
     this.bracketOptionsNext.push(selectedOption);
     this.bracketIndex = this.bracketIndex + 2;
     if(this.bracketOptions.length == 2) {
       //Redirect to new page with final result
-      console.log('Finished ENTIRE bracket');
       this.id = selectedOption.id;
       this.router.navigate(['../final-result', this.id], {relativeTo: this.route});
     } else if(this.bracketIndex + 1 < this.bracketOptions.length) {
@@ -137,8 +122,6 @@ export class BracketComponent implements OnInit {
       this.choice2 = this.bracketOptions[this.bracketIndex + 1];
       this.counter++;
     } else {
-      console.log('Finished bracket');
-      console.log('Starting next bracket');
       //Restart the bracket index
       //Replace bracket list with new selected options
       //Clear the storage/selected bracket
