@@ -129,6 +129,10 @@ export class BracketComponent implements OnInit {
       this.choice1 = this.bracketOptions[this.bracketIndex];
       this.choice2 = this.bracketOptions[this.bracketIndex + 1];
     }
+    // Give some time for the image to load correctly, so hide both elements and go back to normal state
+    this.state1 = 'not-selected';
+    this.state2 = 'not-selected';
+    await this.delay(100);
     this.state1 = 'normal';
     this.state2 = 'normal';
   }
