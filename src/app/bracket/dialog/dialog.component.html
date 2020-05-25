@@ -1,30 +1,31 @@
 <div class="dialog">
   <h1 mat-dialog-title>Bracket Options</h1>
   <div mat-dialog-content>
-    <p style="color:red;" *ngIf="submitted && (!bracketSizeFormControl.valid || !groupFormControl.valid)">Please complete the required form fields</p>
+    <p style="color:red;" *ngIf="submitted && (!bracketSizeFormControl.valid || !groupFormControl.valid)">Please
+      complete the required form fields</p>
     <mat-form-field>
       <mat-label>Bracket Size</mat-label>
       <mat-select [(ngModel)]="data.bracketSize" [formControl]="bracketSizeFormControl" required>
-          <mat-option>--</mat-option>
-          <mat-option *ngFor="let bracketSize of bracketSizes" [value]="bracketSize">
-            {{bracketSize}}
-          </mat-option>
-        </mat-select>
-        <mat-error>Bracket Size is required</mat-error>
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let bracketSize of bracketSizes" [value]="bracketSize">
+          {{bracketSize}}
+        </mat-option>
+      </mat-select>
+      <mat-error>Bracket Size is required</mat-error>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Group</mat-label>
       <mat-select [(ngModel)]="data.group" [formControl]="groupFormControl" multiple required>
-          <mat-select-trigger>
-            {{groupFormControl.value ? groupFormControl.value[0] : ''}}
-            <span *ngIf="groupFormControl.value?.length > 1" class="example-additional-selection">
-              (+{{groupFormControl.value.length - 1}} {{groupFormControl.value?.length === 2 ? 'other' : 'others'}})
-            </span>
-          </mat-select-trigger>
-          <mat-option #allSelected (click)="toggleAllSelection()" [value]="0">Select/Deselect All</mat-option>
-          <mat-option *ngFor="let group of groupList" [value]="group" (click)="tosslePerOne()">{{group}}</mat-option>
-        </mat-select>
-        <mat-error>Groups are required</mat-error>
+        <mat-select-trigger>
+          {{groupFormControl.value ? groupFormControl.value[0] : ''}}
+          <span *ngIf="groupFormControl.value?.length > 1" class="example-additional-selection">
+            (+{{groupFormControl.value.length - 1}} {{groupFormControl.value?.length === 2 ? 'other' : 'others'}})
+          </span>
+        </mat-select-trigger>
+        <mat-option #allSelected (click)="toggleAllSelection()" [value]="0">Select/Deselect All</mat-option>
+        <mat-option *ngFor="let group of groupList" [value]="group" (click)="tosslePerOne()">{{group}}</mat-option>
+      </mat-select>
+      <mat-error>Groups are required</mat-error>
     </mat-form-field>
   </div>
   <div>

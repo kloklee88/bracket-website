@@ -13,10 +13,10 @@
         <a mat-button routerLink="/full-tournament">Full Tournament</a>
     </div>
     <span class="menu-spacer"></span>
-    <button mat-icon-button [matMenuTriggerFor] = "menu">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>account_box</mat-icon>
     </button>
-    <mat-menu #menu = "matMenu">
+    <mat-menu #menu="matMenu">
         <button mat-menu-item>Log In</button>
         <button mat-menu-item>Sign Up</button>
     </mat-menu>

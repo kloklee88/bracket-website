@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import  *  as  data  from  './bracket-options.json';
+import *  as  data from './bracket-options.json';
 import { Bracket } from './bracket-option.model';
 
 @Injectable({

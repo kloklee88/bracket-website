@@ -17,7 +17,7 @@ export class DialogData {
   styleUrls: ['./dialog.component.css']
 })
 export class DialogComponent implements OnInit {
-  bracketSizes: number[] = [2,4,8,16,32,64];
+  bracketSizes: number[] = [2, 4, 8, 16, 32, 64];
   groupFormControl = new FormControl();
   bracketSizeFormControl = new FormControl();
   groupList: string[] = [];
@@ -29,7 +29,7 @@ export class DialogComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<DialogComponent>,
     private route: ActivatedRoute,
     private router: Router,
-    private bracketService: BracketService) {}
+    private bracketService: BracketService) { }
 
   ngOnInit(): void {
     this.groupList = [...new Set(this.bracketService.getBracketData().bracketOptions.map(x => x.group))] as string[];
@@ -37,7 +37,7 @@ export class DialogComponent implements OnInit {
 
   onNoClick(): void {
     this.dialogRef.close();
-    this.router.navigate(['../about'], {relativeTo: this.route});
+    this.router.navigate(['../about'], { relativeTo: this.route });
   }
 
   submitBracketInfo() {
@@ -48,12 +48,12 @@ export class DialogComponent implements OnInit {
     }
   }
 
-  tosslePerOne(){ 
-    if (this.allSelected.selected) {  
-        this.allSelected.deselect();
-        return false;
+  tosslePerOne() {
+    if (this.allSelected.selected) {
+      this.allSelected.deselect();
+      return false;
     }
-    if(this.groupFormControl.value.length==this.groupList.length) {
+    if (this.groupFormControl.value.length == this.groupList.length) {
       this.allSelected.select();
     }
   }

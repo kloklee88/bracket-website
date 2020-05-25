@@ -1,5 +1,5 @@
 <div fxLayout='column' class='main-container'>
-    <div class='bracketTitle' *ngIf="choice1 && choice2 && bracketOptions">
+    <div class='bracket-title' *ngIf="choice1 && choice2 && bracketOptions">
         <span>{{bracketTitle}} ({{counter}}/{{bracketOptions.length/2}})</span>
     </div>
     <div fxLayout='row' fxLayoutAlign='center' fxLayoutGap='10px' *ngIf="choice1 && choice2 && bracketOptions">
@@ -14,4 +14,3 @@
         </mat-card>
     </div>
 </div>
-

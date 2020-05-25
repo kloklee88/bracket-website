@@ -1,33 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
 .main-container {
     min-height: 100%;
     background-color: #222222;
     color: white;
 }
+
+.bracket-title {
+    text-align: center;
+    font-size: 32px;
+    padding: 15px 0;
+}
+
 .choice {
     text-align: center;
 }
+
 .img-choice {
     max-width: 100% !important;
     height: 80vh !important;
 }
+
 .mat-icon {
     font-size: 35px;
     width: 35px !important;
     height: 35px !important;
 }
+
 .mat-option.mat-selected:not(.mat-option-disabled) {
     color: white !important;
 }
+
 .mat-form-field.mat-focused .mat-form-field-label {
     color: white !important;
 }
+
 .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
     color: white !important;
 }
+
 .mat-form-field.mat-focused .mat-form-field-ripple {
     background-color: white !important;
 }

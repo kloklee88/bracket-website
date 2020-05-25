@@ -55,7 +55,7 @@ export class BracketComponent implements OnInit {
     public dialog: MatDialog,
     private route: ActivatedRoute,
     private router: Router,
-    private bracketService: BracketService) {}
+    private bracketService: BracketService) { }
 
   ngOnInit(): void {
     this.openDialog();
@@ -66,7 +66,7 @@ export class BracketComponent implements OnInit {
       width: '350px',
       height: '350px',
       disableClose: true,
-      data: {bracketSize: this.bracketSize, group: this.group}
+      data: { bracketSize: this.bracketSize, group: this.group }
     });
 
     const subscribeDialog = dialogRef.componentInstance.dialogOutputEmitter.subscribe((data) => {
@@ -76,9 +76,9 @@ export class BracketComponent implements OnInit {
 
   randomizeBracket() {
     //Randomize order of list
-    for (let i = this.bracketOptions.length - 1; i > 0 ; i--) {
+    for (let i = this.bracketOptions.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-        [this.bracketOptions[i], this.bracketOptions[j]] = [this.bracketOptions[j], this.bracketOptions[i]];
+      [this.bracketOptions[i], this.bracketOptions[j]] = [this.bracketOptions[j], this.bracketOptions[i]];
     }
   }
 
@@ -97,10 +97,10 @@ export class BracketComponent implements OnInit {
 
   async selectBracketOption(selectedOption: BracketOption, choiceNumber: number) {
     // Change state to show animations
-    if(choiceNumber === 1) {
+    if (choiceNumber === 1) {
       this.state1 = 'selected';
       this.state2 = 'not-selected';
-    } else if(choiceNumber === 2) {
+    } else if (choiceNumber === 2) {
       this.state2 = 'selected';
       this.state1 = 'not-selected';
     }
@@ -108,11 +108,11 @@ export class BracketComponent implements OnInit {
     //Save the selected choice into new array
     this.bracketOptionsNext.push(selectedOption);
     this.bracketIndex = this.bracketIndex + 2;
-    if(this.bracketOptions.length == 2) {
+    if (this.bracketOptions.length == 2) {
       //Redirect to new page with final result
       this.id = selectedOption.id;
-      this.router.navigate(['../final-result', this.id], {relativeTo: this.route});
-    } else if(this.bracketIndex + 1 < this.bracketOptions.length) {
+      this.router.navigate(['../final-result', this.id], { relativeTo: this.route });
+    } else if (this.bracketIndex + 1 < this.bracketOptions.length) {
       //Change page to the next options
       this.choice1 = this.bracketOptions[this.bracketIndex];
       this.choice2 = this.bracketOptions[this.bracketIndex + 1];
