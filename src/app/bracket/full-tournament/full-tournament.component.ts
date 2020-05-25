@@ -12,6 +12,7 @@ export class FullTournamentComponent implements OnInit {
   bracketTitle: string;
   roundIndices: number[];
   gameIndices: number[];
+  math = Math;
 
   constructor(private bracketService: BracketService) { }
 
@@ -20,7 +21,7 @@ export class FullTournamentComponent implements OnInit {
     this.bracketOptions = this.bracketService.getBracketData().bracketOptions;
     let roundNumber = Math.log2(this.bracketOptions.length);
     this.roundIndices = [...Array(roundNumber).keys()];
-    this.gameIndices = [...Array(this.bracketOptions.length/2).keys()];
+    this.gameIndices = [...Array(this.bracketOptions.length/2).keys()].map(x => x*2);
     console.log(this.gameIndices);
   }
 
