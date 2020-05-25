@@ -42,6 +42,7 @@ export class BracketComponent implements OnInit {
   bracketTitle: string;
   bracketOptions: BracketOption[] = [];
   bracketOptionsNext: BracketOption[] = [];
+  fullBracket: BracketOption[][] = [];
   selectedChoice: BracketOption;
   choice1: BracketOption;
   choice2: BracketOption;
@@ -91,6 +92,9 @@ export class BracketComponent implements OnInit {
     // Limit the data to bracket values (2,4,8,16,32,64, etc)
     this.bracketOptions = this.bracketOptions.slice(0, bracketSize);
     // TODO: If bracket is not a perfect number, reduce it down to the next available option
+    // Store first iteration/round of bracket
+    let bracketRoundStart = this.bracketOptions.map(x => Object.assign({}, x));
+    this.fullBracket.push(bracketRoundStart);
     this.choice1 = this.bracketOptions[this.bracketIndex];
     this.choice2 = this.bracketOptions[this.bracketIndex + 1];
   }
@@ -110,6 +114,7 @@ export class BracketComponent implements OnInit {
     this.bracketIndex = this.bracketIndex + 2;
     if (this.bracketOptions.length == 2) {
       //Redirect to new page with final result
+      this.bracketService.saveFullBracket(this.fullBracket);
       this.id = selectedOption.id;
       this.router.navigate(['../final-result', this.id], { relativeTo: this.route });
     } else if (this.bracketIndex + 1 < this.bracketOptions.length) {
@@ -118,13 +123,15 @@ export class BracketComponent implements OnInit {
       this.choice2 = this.bracketOptions[this.bracketIndex + 1];
       this.counter++;
     } else {
+      //Store winners for full bracket display
+      let bracketRoundWinner = this.bracketOptionsNext.map(x => Object.assign({}, x));
+      this.fullBracket.push(bracketRoundWinner);
       //Restart the bracket index
-      //Replace bracket list with new selected options
-      //Clear the storage/selected bracket
       this.bracketIndex = 0;
       this.counter = 1;
+      //Replace bracket list with new selected options
       this.bracketOptions = this.bracketOptionsNext;
-      this.randomizeBracket();
+      //Clear the storage/selected bracket
       this.bracketOptionsNext = [];
       this.choice1 = this.bracketOptions[this.bracketIndex];
       this.choice2 = this.bracketOptions[this.bracketIndex + 1];

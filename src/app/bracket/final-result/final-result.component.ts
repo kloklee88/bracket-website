@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BracketOption } from '../bracket-option.model';
+import { BracketOption, Bracket } from '../bracket-option.model';
 
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { BracketService } from '../bracket.service';
@@ -12,6 +12,7 @@ import { BracketService } from '../bracket.service';
 export class FinalResultComponent implements OnInit {
   finalChoice: BracketOption;
   id: number;
+  fullBracket: BracketOption[][] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -19,7 +20,6 @@ export class FinalResultComponent implements OnInit {
     private bracketService: BracketService) { }
 
   ngOnInit(): void {
-    console.log('Got to final result');
     this.route.params
       .subscribe(
         (params: Params) => {
@@ -27,12 +27,12 @@ export class FinalResultComponent implements OnInit {
           this.getBracketOption(this.id);
         }
       );
+      this.fullBracket = this.bracketService.getFullBracket();
+      console.log(this.fullBracket);
   }
 
   getBracketOption(id: number) {
-    console.log(id);
     this.finalChoice = this.bracketService.getBracketData().bracketOptions.find(x => x.id == id);
-    console.log(this.finalChoice);
   }
 
 }
