@@ -1,19 +1,20 @@
 <div class="main-container" *ngIf="fullBracket.length > 0">
-	<h1 class="bracket-title">{{bracketTitle}}</h1>
-	<main>
-		<ul class="round" *ngFor="let roundIndex of roundIndices">
-			<ng-container *ngFor="let gameIndex of gameIndices.slice(0,math.pow(2,roundIndices.length-roundIndex))">
-				<li class="spacer">&nbsp;</li>
+    <h1 class="bracket-title">{{bracketTitle}}</h1>
+    <main>
+        <ul class="round" *ngFor="let round of fullBracket, let i = index">
+            <ng-container *ngFor="let game of round, let j = index, let even = even">
+                <ng-container *ngIf="even">
+                    <li class="spacer">&nbsp;</li>
 
-				<li class="game game-top winner">
-					{{fullBracket[roundIndex][gameIndex].name}}<span>({{fullBracket[roundIndex][gameIndex].group}})</span>
-				</li>
-				<li class="game game-spacer">&nbsp;</li>
-				<li class="game game-bottom">{{fullBracket[roundIndex][gameIndex+1].name}}
-					<span>({{fullBracket[roundIndex][gameIndex+1].group}})</span></li>
-
-			</ng-container>
-			<li class="spacer">&nbsp;</li>
-		</ul>
-	</main>
+                    <li class="game game-top winner">
+                        {{round[j].name}}<span>({{round[j].group}})</span>
+                    </li>
+                    <li class="game game-spacer">&nbsp;</li>
+                    <li class="game game-bottom">{{round[j+1].name}}
+                        <span>({{round[j+1].group}})</span></li>
+                </ng-container>
+            </ng-container>
+            <li class="spacer">&nbsp;</li>
+        </ul>
+    </main>
 </div>

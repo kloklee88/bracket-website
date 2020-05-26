@@ -11,21 +11,12 @@ export class FullTournamentComponent implements OnInit {
   @Input() fullBracket: BracketOption[][] = [];
   bracketOptions: BracketOption[] = [];
   bracketTitle: string;
-  roundIndices: number[];
-  gameIndices: number[];
-  math = Math;
 
   constructor(private bracketService: BracketService) { }
 
   ngOnInit(): void {
     this.bracketTitle = this.bracketService.getBracketData().bracketTitle;
-    //this.bracketOptions = this.bracketService.getBracketData().bracketOptions;
     this.fullBracket = this.bracketService.getFullBracket();
-    let roundNumber = this.fullBracket.length;
-    this.roundIndices = [...Array(roundNumber).keys()];
-    this.gameIndices = [...Array(this.fullBracket.length).keys()].map(x => x * 2);
-    console.log(this.roundIndices);
-    console.log(this.gameIndices);
   }
 
 }
