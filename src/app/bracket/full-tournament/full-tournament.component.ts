@@ -9,7 +9,7 @@ import { BracketOption, Bracket } from '../bracket-option.model';
 })
 export class FullTournamentComponent implements OnInit {
   @Input() fullBracket: BracketOption[][] = [];
-  @Input() finalchoice: BracketOption;
+  @Input("finalChoice") finalChoice: BracketOption;
   bracketOptions: BracketOption[] = [];
   bracketTitle: string;
 
@@ -21,11 +21,12 @@ export class FullTournamentComponent implements OnInit {
   }
 
   checkWinner(round: BracketOption[], i: number, j: number): Object {
+    console.log(this.finalChoice);
     if (this.fullBracket[i + 1] != undefined) {
       if (this.fullBracket[i + 1].some(b => b.name === round[j].name)) {
         return "winner";
       }
-    } else if (this.finalchoice != null && this.finalchoice.name === round[j].name) {
+    } else if (this.finalChoice != null && this.finalChoice.name === round[j].name) {
       return "winner";
     }
     return "";
