@@ -11,7 +11,6 @@ const routes: Routes = [
   { path: '', redirectTo: '/bracket', pathMatch: 'full' },
   { path: 'bracket', component: BracketComponent },
   { path: 'final-result/:id', component: FinalResultComponent },
-  { path: 'full-tournament', component: FullTournamentComponent },
   { path: 'about', component: AboutComponent },
   { path: 'developer-tools', component: DeveloperToolsComponent }
 ];
