@@ -1,12 +1,14 @@
-<div fxLayout='column' class='main-container'>
-    <div fxLayoutAlign='center'>
-        <h1>WINNER</h1>
+<div fxLayout='row' class='main-container'>
+    <app-full-tournament fxFlex='60%' fxLayout='row'></app-full-tournament>
+    <div fxLayout='column' fxFlex='40%'>
+        <div fxLayoutAlign='center'>
+            <h1>WINNER</h1>
+        </div>
+        <div fxLayout='row' fxLayoutAlign='center'>
+            <mat-card fxFlex='75%' class='choice'>
+                <mat-card-title>{{finalChoice.name}}</mat-card-title>
+                <img class='img-choice' src='{{finalChoice.imageUrl}}'>
+            </mat-card>
+        </div>
     </div>
-    <div fxLayout='row' fxLayoutAlign='center'>
-        <mat-card fxFlex='35%' class='choice'>
-            <mat-card-title>{{finalChoice.name}}</mat-card-title>
-            <img class='img-choice' src='{{finalChoice.imageUrl}}'>
-        </mat-card>
-    </div>
-    <app-full-tournament fxLayout='row'></app-full-tournament>
 </div>

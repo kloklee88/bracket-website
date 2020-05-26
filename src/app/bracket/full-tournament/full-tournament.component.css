@@ -7,6 +7,13 @@ main {
   flex-direction: row;
 }
 
+.bracket-container {
+  min-height: 100%;
+  background-color: #222222;
+  color: white;
+  max-width: 100%;
+}
+
 .round {
   display: flex;
   flex-direction: column;
