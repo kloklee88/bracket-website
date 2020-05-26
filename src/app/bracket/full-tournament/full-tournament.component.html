@@ -5,11 +5,11 @@
             <li class="spacer" style="text-align: center;">Round {{i+1}}</li>
             <ng-container *ngFor="let game of round, let j = index, let even = even">
                 <ng-container *ngIf="even">
-                    <li class="game game-top winner">
+                    <li class="game game-top" [ngClass]="checkWinner(round, i, j)">
                         {{round[j].name}}<span>({{round[j].group}})</span>
                     </li>
                     <li class="game game-spacer">&nbsp;</li>
-                    <li class="game game-bottom">{{round[j+1].name}}
+                    <li class="game game-bottom" [ngClass]="checkWinner(round, i, j+1)">{{round[j+1].name}}
                         <span>({{round[j+1].group}})</span></li>
                     <li class="spacer">&nbsp;</li>
                 </ng-container>
