@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { BracketService } from '../bracket.service';
 import { BracketOption } from '../bracket-option.model';
 
@@ -8,6 +8,7 @@ import { BracketOption } from '../bracket-option.model';
   styleUrls: ['./full-tournament.component.css']
 })
 export class FullTournamentComponent implements OnInit {
+  @Input() fullBracket: BracketOption[][] = [];
   bracketOptions: BracketOption[] = [];
   bracketTitle: string;
   roundIndices: number[];
@@ -18,10 +19,12 @@ export class FullTournamentComponent implements OnInit {
 
   ngOnInit(): void {
     this.bracketTitle = this.bracketService.getBracketData().bracketTitle;
-    this.bracketOptions = this.bracketService.getBracketData().bracketOptions;
-    let roundNumber = Math.log2(this.bracketOptions.length);
+    //this.bracketOptions = this.bracketService.getBracketData().bracketOptions;
+    this.fullBracket = this.bracketService.getFullBracket();
+    let roundNumber = this.fullBracket.length;
     this.roundIndices = [...Array(roundNumber).keys()];
-    this.gameIndices = [...Array(this.bracketOptions.length/2).keys()].map(x => x*2);
+    this.gameIndices = [...Array(this.fullBracket.length).keys()].map(x => x * 2);
+    console.log(this.roundIndices);
     console.log(this.gameIndices);
   }
 

@@ -28,7 +28,6 @@ export class FinalResultComponent implements OnInit {
         }
       );
       this.fullBracket = this.bracketService.getFullBracket();
-      console.log(this.fullBracket);
   }
 
   getBracketOption(id: number) {
