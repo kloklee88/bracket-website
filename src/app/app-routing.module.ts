@@ -5,10 +5,12 @@ import { DeveloperToolsComponent } from './developer-tools/developer-tools.compo
 import { AboutComponent } from './about/about.component';
 import { FinalResultComponent } from './bracket/final-result/final-result.component';
 import { FullTournamentComponent } from './bracket/full-tournament/full-tournament.component';
+import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/bracket', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
   { path: 'bracket', component: BracketComponent },
   { path: 'final-result/:id', component: FinalResultComponent },
   { path: 'about', component: AboutComponent },

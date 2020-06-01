@@ -108,7 +108,7 @@ export class BracketComponent implements OnInit {
       this.state2 = 'selected';
       this.state1 = 'not-selected';
     }
-    //await this.delay(1000);
+    await this.delay(1000);
     //Save the selected choice into new array
     this.bracketOptionsNext.push(selectedOption);
     this.bracketIndex = this.bracketIndex + 2;
