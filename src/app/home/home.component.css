@@ -14,6 +14,9 @@
     overflow-y: auto;
     color: white;
 }
+.main-home {
+    text-align: center;
+}
 .mat-h1 {
     font-size: 56px;
     font-weight: 300;
