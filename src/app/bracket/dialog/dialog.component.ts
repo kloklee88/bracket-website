@@ -18,7 +18,7 @@ export class DialogData {
   styleUrls: ['./dialog.component.css']
 })
 export class DialogComponent implements OnInit {
-  bracketSizes: number[] = [2, 4, 8, 16, 32, 64];
+  bracketSizes: number[] = [];
   groupFormControl = new FormControl();
   bracketSizeFormControl = new FormControl();
   bracketDataFormControl = new FormControl();
@@ -56,6 +56,7 @@ export class DialogComponent implements OnInit {
   }
 
   tosslePerOne() {
+    this.changeBracketSizeList();
     if (this.allSelected.selected) {
       this.allSelected.deselect();
       return false;
@@ -70,6 +71,15 @@ export class DialogComponent implements OnInit {
       this.groupFormControl.patchValue([...this.groupList, 0]);
     } else {
       this.groupFormControl.patchValue([]);
+    }
+    this.changeBracketSizeList();
+  }
+
+  changeBracketSizeList() {
+    this.bracketSizes = [];
+    let bracketLength = this.bracketService.getBracketData(this.data.bracketData).bracketOptions.filter(x => this.data.group.includes(x.group)).length;
+    for(let i = 1; i <= Math.floor(Math.log2(bracketLength)); i++) {
+      this.bracketSizes[i-1] = Math.pow(2, i);
     }
   }
 

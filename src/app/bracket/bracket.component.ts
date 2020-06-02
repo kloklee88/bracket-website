@@ -92,7 +92,6 @@ export class BracketComponent implements OnInit {
     this.bracketOptions = this.bracketOptions.filter(x => groups.includes(x.group));
     // Limit the data to bracket values (2,4,8,16,32,64, etc)
     this.bracketOptions = this.bracketOptions.slice(0, bracketSize);
-    // TODO: If bracket is not a perfect number, reduce it down to the next available option
     // Store first iteration/round of bracket
     let bracketRoundStart = this.bracketOptions.map(x => Object.assign({}, x));
     this.fullBracket.push(bracketRoundStart);

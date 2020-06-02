@@ -16,16 +16,6 @@
       <mat-error>Bracket Data is required</mat-error>
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Bracket Size</mat-label>
-      <mat-select [(ngModel)]="data.bracketSize" [formControl]="bracketSizeFormControl" required>
-        <mat-option>--</mat-option>
-        <mat-option *ngFor="let bracketSize of bracketSizes" [value]="bracketSize">
-          {{bracketSize}}
-        </mat-option>
-      </mat-select>
-      <mat-error>Bracket Size is required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
       <mat-label>Group</mat-label>
       <mat-select [(ngModel)]="data.group" [formControl]="groupFormControl" multiple required>
         <mat-select-trigger>
@@ -38,6 +28,16 @@
         <mat-option *ngFor="let group of groupList" [value]="group" (click)="tosslePerOne()">{{group}}</mat-option>
       </mat-select>
       <mat-error>Groups are required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Bracket Size</mat-label>
+      <mat-select [(ngModel)]="data.bracketSize" [formControl]="bracketSizeFormControl" required>
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let bracketSize of bracketSizes" [value]="bracketSize">
+          {{bracketSize}}
+        </mat-option>
+      </mat-select>
+      <mat-error>Bracket Size is required</mat-error>
     </mat-form-field>
   </div>
   <div>
