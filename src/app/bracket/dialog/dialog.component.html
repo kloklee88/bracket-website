@@ -1,8 +1,20 @@
 <div class="dialog">
   <h1 mat-dialog-title>Bracket Options</h1>
   <div mat-dialog-content>
-    <p style="color:red;" *ngIf="submitted && (!bracketSizeFormControl.valid || !groupFormControl.valid)">Please
+    <p style="color:red;"
+      *ngIf="submitted && (!bracketDataFormControl.valid ||!bracketSizeFormControl.valid || !groupFormControl.valid)">
+      Please
       complete the required form fields</p>
+    <mat-form-field>
+      <mat-label>Bracket Data</mat-label>
+      <mat-select [(ngModel)]="data.bracketData" [formControl]="bracketDataFormControl" required>
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let bracketData of bracketDataList" [value]="bracketData" (click)="updateBracketGroups()">
+          {{bracketData}}
+        </mat-option>
+      </mat-select>
+      <mat-error>Bracket Data is required</mat-error>
+    </mat-form-field>
     <mat-form-field>
       <mat-label>Bracket Size</mat-label>
       <mat-select [(ngModel)]="data.bracketSize" [formControl]="bracketSizeFormControl" required>

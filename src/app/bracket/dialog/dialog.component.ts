@@ -9,6 +9,7 @@ import { BracketService } from '../bracket.service';
 export class DialogData {
   group: string[];
   bracketSize: number;
+  bracketData: string;
 }
 
 @Component({
@@ -20,11 +21,13 @@ export class DialogComponent implements OnInit {
   bracketSizes: number[] = [2, 4, 8, 16, 32, 64];
   groupFormControl = new FormControl();
   bracketSizeFormControl = new FormControl();
+  bracketDataFormControl = new FormControl();
   groupList: string[] = [];
   data: DialogData = new DialogData();
   submitted: boolean = false;
   @Output() dialogOutputEmitter = new EventEmitter();
   @ViewChild('allSelected') private allSelected: MatOption;
+  bracketDataList: string[] = [];
 
   constructor(public dialogRef: MatDialogRef<DialogComponent>,
     private route: ActivatedRoute,
@@ -32,7 +35,11 @@ export class DialogComponent implements OnInit {
     private bracketService: BracketService) { }
 
   ngOnInit(): void {
-    this.groupList = [...new Set(this.bracketService.getBracketData().bracketOptions.map(x => x.group))] as string[];
+    this.bracketDataList = this.bracketService.getBracketDataList();
+  }
+
+  updateBracketGroups() {
+    this.groupList = [...new Set(this.bracketService.getBracketData(this.data.bracketData).bracketOptions.map(x => x.group))] as string[];
   }
 
   onNoClick(): void {

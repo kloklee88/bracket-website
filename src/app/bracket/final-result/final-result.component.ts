@@ -13,6 +13,7 @@ export class FinalResultComponent implements OnInit {
   finalChoice: BracketOption;
   id: number;
   fullBracket: BracketOption[][] = [];
+  bracketInfoSelected: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,6 +21,8 @@ export class FinalResultComponent implements OnInit {
     private bracketService: BracketService) { }
 
   ngOnInit(): void {
+    this.fullBracket = this.bracketService.getFullBracket();
+    this.bracketInfoSelected = this.bracketService.getBracketInfoSelected();
     this.route.params
       .subscribe(
         (params: Params) => {
@@ -27,11 +30,10 @@ export class FinalResultComponent implements OnInit {
           this.getBracketOption(this.id);
         }
       );
-      this.fullBracket = this.bracketService.getFullBracket();
   }
 
   getBracketOption(id: number) {
-    this.finalChoice = this.bracketService.getBracketData().bracketOptions.find(x => x.id == id);
+    this.finalChoice = this.bracketService.getBracketData(this.bracketInfoSelected).bracketOptions.find(x => x.id == id);
   }
 
 }

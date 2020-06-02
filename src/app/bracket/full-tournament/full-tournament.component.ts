@@ -12,11 +12,13 @@ export class FullTournamentComponent implements OnInit {
   @Input("finalChoice") finalChoice: BracketOption;
   bracketOptions: BracketOption[] = [];
   bracketTitle: string;
+  bracketInfo: string;
 
   constructor(private bracketService: BracketService) { }
 
   ngOnInit(): void {
-    this.bracketTitle = this.bracketService.getBracketData().bracketTitle;
+    this.bracketInfo = this.bracketService.getBracketInfoSelected();
+    this.bracketTitle = this.bracketService.getBracketData(this.bracketInfo).bracketTitle;
     this.fullBracket = this.bracketService.getFullBracket();
   }
 

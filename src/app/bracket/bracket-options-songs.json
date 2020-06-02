@@ -1,0 +1,389 @@
+{
+    "bracketTitle" : "Kpop Songs World Cup",
+    "bracketOptions": [
+        {
+            "id": 1,
+            "name": "MORE & MORE",
+            "group": "Twice",
+            "imageUrl": "https://i.imgur.com/Nev0thU.png"
+        },
+        {
+            "id": 2,
+            "name": "Fancy",
+            "group": "Twice",
+            "imageUrl": "https://i.imgur.com/77FXbIw.png"
+        },
+        {
+            "id": 3,
+            "name": "Tzuyu",
+            "group": "Twice",
+            "imageUrl": "https://i.imgur.com/EL2ZuwB.png"
+        },
+        {
+            "id": 4,
+            "name": "Momo",
+            "group": "Twice",
+            "imageUrl": "https://i.imgur.com/FaY4Zlb.png"
+        },
+        {
+            "id": 5,
+            "name": "Sana",
+            "group": "Twice",
+            "imageUrl": "https://i.imgur.com/ADIgkik.png"
+        },
+        {
+            "id": 6,
+            "name": "Dahyun",
+            "group": "Twice",
+            "imageUrl": "https://i.imgur.com/4SFGdxS.png"
+        },
+        {
+            "id": 7,
+            "name": "Jeongyeon",
+            "group": "Twice",
+            "imageUrl": "https://i.imgur.com/3Xr8OgY.png"
+        },
+        {
+            "id": 8,
+            "name": "Mina",
+            "group": "Twice",
+            "imageUrl": "https://i.imgur.com/w6f5r1q.png"
+        },
+        {
+            "id": 9,
+            "name": "Chaeyoung",
+            "group": "Twice",
+            "imageUrl": "https://i.imgur.com/eG3WviP.png"
+        },
+        {
+            "id": 10,
+            "name": "Mimi",
+            "group": "Oh My Girl",
+            "imageUrl": "https://i.imgur.com/8TLhQ0H.jpg"
+        },
+        {
+            "id": 11,
+            "name": "Seunghee",
+            "group": "Oh My Girl",
+            "imageUrl": "https://i.imgur.com/rmovnr5.jpg"
+        },
+        {
+            "id": 12,
+            "name": "YooA",
+            "group": "Oh My Girl",
+            "imageUrl": "https://i.imgur.com/s0w4M8g.jpg"
+        },
+        {
+            "id": 13,
+            "name": "Binnie",
+            "group": "Oh My Girl",
+            "imageUrl": "https://i.imgur.com/MPQAs3H.jpg"
+        },
+        {
+            "id": 14,
+            "name": "Arin",
+            "group": "Oh My Girl",
+            "imageUrl": "https://i.imgur.com/DXscprQ.jpg"
+        },
+        {
+            "id": 15,
+            "name": "Jiho",
+            "group": "Oh My Girl",
+            "imageUrl": "https://i.imgur.com/hju7Ige.jpg"
+        },
+        {
+            "id": 16,
+            "name": "Yujin",
+            "group": "Izone",
+            "imageUrl": "https://i.imgur.com/YVglZ6A.jpg"
+        },
+        {
+            "id": 17,
+            "name": "Won Young",
+            "group": "Izone",
+            "imageUrl": "https://i.imgur.com/4lm7x0X.jpg"
+        },
+        {
+            "id": 18,
+            "name": "Yuri",
+            "group": "Izone",
+            "imageUrl": "https://i.imgur.com/U5uLMAt.jpg"
+        },
+        {
+            "id": 19,
+            "name": "Minju",
+            "group": "Izone",
+            "imageUrl": "https://i.imgur.com/D44QtsQ.jpg"
+        },
+        {
+            "id": 20,
+            "name": "Eunbi",
+            "group": "Izone",
+            "imageUrl": "https://i.imgur.com/sNhuWyY.jpg"
+        },
+        {
+            "id": 21,
+            "name": "Sakura",
+            "group": "Izone",
+            "imageUrl": "https://i.imgur.com/IzxfSa5.jpg"
+        },
+        {
+            "id": 22,
+            "name": "Ailee",
+            "group": "Solo",
+            "imageUrl": "https://i.imgur.com/ymmQloF.png"
+        },
+        {
+            "id": 23,
+            "name": "Luna",
+            "group": "f(x)",
+            "imageUrl": "https://i.imgur.com/3D52Ok3.jpg"
+        },
+        {
+            "id": 24,
+            "name": "Luna",
+            "group": "f(x)",
+            "imageUrl": "https://i.imgur.com/3D52Ok3.jpg"
+        },
+        {
+            "id": 25,
+            "name": "Lisa",
+            "group": "Blackpink",
+            "imageUrl": "https://i.imgur.com/JqnABa0.png"
+        },
+        {
+            "id": 26,
+            "name": "Rose",
+            "group": "Blackpink",
+            "imageUrl": "https://i.imgur.com/H6bbhsO.png"
+        },
+        {
+            "id": 27,
+            "name": "Jisoo",
+            "group": "Blackpink",
+            "imageUrl": "https://i.imgur.com/INpC9QY.png"
+        },
+        {
+            "id": 28,
+            "name": "Jennie",
+            "group": "Blackpink",
+            "imageUrl": "https://i.imgur.com/71tMVMq.jpg"
+        },
+        {
+            "id": 29,
+            "name": "Bora",
+            "group": "Sistar",
+            "imageUrl": "https://i.imgur.com/2A6Mtxw.png"
+        },
+        {
+            "id": 30,
+            "name": "Hyorin",
+            "group": "Sistar",
+            "imageUrl": "https://i.imgur.com/SHmXEj4.png"
+        },
+        {
+            "id": 31,
+            "name": "Ryujin",
+            "group": "Itzy",
+            "imageUrl": "https://i.imgur.com/xRpAlXs.jpg"
+        },
+        {
+            "id": 32,
+            "name": "Yeji",
+            "group": "Itzy",
+            "imageUrl": "https://i.imgur.com/TqGnHxJ.jpg"
+        },
+        {
+            "id": 33,
+            "name": "Yuna",
+            "group": "Itzy",
+            "imageUrl": "https://i.imgur.com/LhAHdP7.jpg"
+        },
+        {
+            "id": 34,
+            "name": "Chungha",
+            "group": "Solo",
+            "imageUrl": "https://i.imgur.com/dyxOoO2.jpg"
+        },
+        {
+            "id": 35,
+            "name": "Somi",
+            "group": "Solo",
+            "imageUrl": "https://i.imgur.com/qvSROqB.png"
+        },
+        {
+            "id": 36,
+            "name": "IU",
+            "group": "Solo",
+            "imageUrl": "https://i.imgur.com/aOUiXJw.png"
+        },
+        {
+            "id": 37,
+            "name": "Nako",
+            "group": "Izone",
+            "imageUrl": "https://i.imgur.com/zCJDcAs.jpg"
+        },
+        {
+            "id": 38,
+            "name": "Chaewon",
+            "group": "Izone",
+            "imageUrl": "https://i.imgur.com/JhTq8Nt.jpg"
+        },
+        {
+            "id": 39,
+            "name": "Yena",
+            "group": "Izone",
+            "imageUrl": "https://i.imgur.com/EaAzyLG.png"
+        },
+        {
+            "id": 40,
+            "name": "Jiwoo",
+            "group": "Kard",
+            "imageUrl": "https://i.imgur.com/TnV8kYX.png"
+        },
+        {
+            "id": 41,
+            "name": "Somin",
+            "group": "Kard",
+            "imageUrl": "https://i.imgur.com/YpPpR8u.png"
+        },
+        {
+            "id": 42,
+            "name": "Hyerim",
+            "group": "Limesoda",
+            "imageUrl": "https://i.imgur.com/0NBiPYR.png"
+        },
+        {
+            "id": 43,
+            "name": "Jangmi",
+            "group": "Limesoda",
+            "imageUrl": "https://i.imgur.com/bMeXb16.png"
+        },
+        {
+            "id": 44,
+            "name": "Seungji",
+            "group": "Limesoda",
+            "imageUrl": "https://i.imgur.com/zAXQwSy.png"
+        },
+        {
+            "id": 45,
+            "name": "Nancy",
+            "group": "Momoland",
+            "imageUrl": "https://i.imgur.com/U876p3d.png"
+        },
+        {
+            "id": 46,
+            "name": "Yeonwoo",
+            "group": "Momoland",
+            "imageUrl": "https://i.imgur.com/i0IUpgu.png"
+        },
+        {
+            "id": 47,
+            "name": "Nayoung",
+            "group": "Pristin",
+            "imageUrl": "https://i.imgur.com/FNKrNUo.png"
+        },
+        {
+            "id": 48,
+            "name": "Irene",
+            "group": "Red Velvet",
+            "imageUrl": "https://i.imgur.com/fNjA5Gr.png"
+        },
+        {
+            "id": 49,
+            "name": "Joy",
+            "group": "Red Velvet",
+            "imageUrl": "https://i.imgur.com/Y1sDtUj.png"
+        },
+        {
+            "id": 50,
+            "name": "Wendy",
+            "group": "Red Velvet",
+            "imageUrl": "https://i.imgur.com/sebqvcC.png"
+        },
+        {
+            "id": 51,
+            "name": "Yeri",
+            "group": "Red Velvet",
+            "imageUrl": "https://i.imgur.com/kvDhO8B.png"
+        },
+        {
+            "id": 52,
+            "name": "Suzy",
+            "group": "miss A",
+            "imageUrl": "https://i.imgur.com/JlmgOH0.png"
+        },
+        {
+            "id": 53,
+            "name": "Victoria",
+            "group": "f(x)",
+            "imageUrl": "https://i.imgur.com/3gFPpYX.jpg"
+        },
+        {
+            "id": 54,
+            "name": "Doyeon",
+            "group": "Weki Meki",
+            "imageUrl": "https://i.imgur.com/oHGTyb7.png"
+        },
+        {
+            "id": 55,
+            "name": "Yoojung",
+            "group": "Weki Meki",
+            "imageUrl": "https://i.imgur.com/IReqqTQ.png"
+        },
+        {
+            "id": 56,
+            "name": "Bona",
+            "group": "WSJN",
+            "imageUrl": "https://i.imgur.com/3qikWxm.jpg"
+        },
+        {
+            "id": 57,
+            "name": "Eunseo",
+            "group": "WSJN",
+            "imageUrl": "https://i.imgur.com/68LKHmX.jpg"
+        },
+        {
+            "id": 58,
+            "name": "Dawon",
+            "group": "WSJN",
+            "imageUrl": "https://i.imgur.com/n4z8TtJ.jpg"
+        },
+        {
+            "id": 59,
+            "name": "Dayoung",
+            "group": "WSJN",
+            "imageUrl": "https://i.imgur.com/PK9zb2r.jpg"
+        },
+        {
+            "id": 60,
+            "name": "Luda",
+            "group": "WSJN",
+            "imageUrl": "https://i.imgur.com/texJRXA.jpg"
+        },
+        {
+            "id": 61,
+            "name": "Yeonjung",
+            "group": "WSJN",
+            "imageUrl": "https://i.imgur.com/npNqYiL.jpg"
+        },
+        {
+            "id": 62,
+            "name": "Yeoreum",
+            "group": "WSJN",
+            "imageUrl": "https://i.imgur.com/WPY1ICP.jpg"
+        },
+        {
+            "id": 63,
+            "name": "Seola",
+            "group": "WSJN",
+            "imageUrl": "https://i.imgur.com/0srFj2n.jpg"
+        },
+        {
+            "id": 64,
+            "name": "Yuzion",
+            "group": "Solo",
+            "imageUrl": "https://i.imgur.com/esMWIvC.jpg"
+        }
+    ]
+}

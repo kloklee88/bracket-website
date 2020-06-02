@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import *  as  data from './bracket-options.json';
+import * as dataGirls from './bracket-options-girls.json';
+import * as dataSongs from './bracket-options-songs.json';
+
 import { Bracket, BracketOption } from './bracket-option.model';
 
 @Injectable({
@@ -8,11 +10,29 @@ import { Bracket, BracketOption } from './bracket-option.model';
 })
 export class BracketService {
   fullBracket: BracketOption[][] = [];
+  bracketInfoSelected: string;
 
   constructor() { }
 
-  public getBracketData(): Bracket {
-    return (data as any).default;
+  public getBracketDataList(): string[] {
+    return ['SONGS', 'GIRLS'];
+  }
+
+  public getBracketData(bracketInfo: string): Bracket {
+    if(bracketInfo === 'GIRLS') {
+      return (dataGirls as any).default;
+    } else if (bracketInfo === 'SONGS') {
+      return (dataSongs as any).default;
+    }
+    return null;
+  }
+
+  public saveBracketInfoSelected(bracketInfoSelected: string) {
+    this.bracketInfoSelected = bracketInfoSelected;
+  }
+
+  public getBracketInfoSelected(): string {
+    return this.bracketInfoSelected;
   }
 
   public saveFullBracket(fullBracket: BracketOption[][]) {
