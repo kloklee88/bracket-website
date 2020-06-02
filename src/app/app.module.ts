@@ -17,6 +17,7 @@ import { FinalResultComponent } from './bracket/final-result/final-result.compon
 import { DialogComponent } from './bracket/dialog/dialog.component';
 import { FullTournamentComponent } from './bracket/full-tournament/full-tournament.component';
 import { HomeComponent } from './home/home.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HomeComponent } from './home/home.component';
     FinalResultComponent,
     DialogComponent,
     FullTournamentComponent,
-    HomeComponent
+    HomeComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

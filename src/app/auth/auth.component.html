@@ -1,0 +1,30 @@
+<div fxLayout='column' class='main-container'>
+    <h1 mat-title>Authentication</h1>
+    <div>
+        <form>
+            <!-- <p style="color:red;"
+            *ngIf="submitted && (!bracketDataFormControl.valid ||!bracketSizeFormControl.valid || !groupFormControl.valid)">
+            Please
+            complete the required form fields</p> -->
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <mat-input [(ngModel)]="email" required placeholder="Ex. kevin@example.com"></mat-input>
+                <mat-error>Email is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error>Password is required</mat-error>
+            </mat-form-field>
+        </form>
+    </div>
+    <div>
+        <button mat-button color="primary" (click)="loginOrSignup()">{{ isLoginMode ? 'Login' : 'Sign Up'}}</button>
+        <button mat-button color="accent" (click)="onSwitchMode()" cdkFocusInitial>Switch to
+            {{ isLoginMode ? 'Login' : 'Sign Up'}}</button>
+    </div>
+</div>
