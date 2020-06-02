@@ -23,7 +23,6 @@ export class FullTournamentComponent implements OnInit {
   }
 
   checkWinner(round: BracketOption[], i: number, j: number): Object {
-    console.log(this.finalChoice);
     if (this.fullBracket[i + 1] != undefined) {
       if (this.fullBracket[i + 1].some(b => b.name === round[j].name)) {
         return "winner";
