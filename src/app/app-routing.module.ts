@@ -4,7 +4,6 @@ import { BracketComponent } from './bracket/bracket.component';
 import { DeveloperToolsComponent } from './developer-tools/developer-tools.component';
 import { AboutComponent } from './about/about.component';
 import { FinalResultComponent } from './bracket/final-result/final-result.component';
-import { FullTournamentComponent } from './bracket/full-tournament/full-tournament.component';
 import { HomeComponent } from './home/home.component';
 import { AuthComponent } from './auth/auth.component';
 
