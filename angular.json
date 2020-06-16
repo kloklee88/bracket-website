@@ -85,7 +85,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/simkung_logo_icon.ico",
+              "src/simkung_logo_purple_icon.ico",
               "src/assets"
             ],
             "styles": [
