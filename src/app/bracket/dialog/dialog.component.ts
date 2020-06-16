@@ -44,7 +44,7 @@ export class DialogComponent implements OnInit {
 
   onNoClick(): void {
     this.dialogRef.close();
-    this.router.navigate(['../about'], { relativeTo: this.route });
+    this.router.navigate(['../home'], { relativeTo: this.route });
   }
 
   submitBracketInfo() {

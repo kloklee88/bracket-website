@@ -1,10 +1,7 @@
-<mat-toolbar color="primary">
-    <button mat-icon-button routerLink="/home">
-        <!-- <mat-icon>favorite</mat-icon> -->
-        <mat-icon svgIcon="simkung"></mat-icon>
-    </button>
+<mat-toolbar color="primary" class="app-navbar">
     <a mat-button routerLink="/home">
-        <h1 class="header-title">Simkung (심쿵)</h1>
+        <mat-icon svgIcon="simkung"></mat-icon>
+        <span class="header-title">Simkung (심쿵)</span>
     </a>
     <div class="bracket-button">
         <a mat-raised-button color="accent" routerLink="/bracket">Start Bracket</a>
@@ -14,16 +11,16 @@
         <a mat-button routerLink="/developer-tools">Developer Tools</a>
     </div>
     <span class="menu-spacer"></span>
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>account_box</mat-icon>
-    </button>
+    <a mat-button href="https://github.com/kloklee88/bracket-website" target="_blank">
+        <mat-icon>code</mat-icon>Github
+    </a>
+    <a mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>account_box</mat-icon>Account
+    </a>
     <mat-menu #menu="matMenu">
         <button mat-menu-item routerLink="/auth">Log In</button>
         <button mat-menu-item routerLink="/auth">Sign Up</button>
     </mat-menu>
 </mat-toolbar>
-<div fxLayout="row wrap" fxLayoutAlign="center">
-    <a href="#" mat-button routerLink="/">
-        <!-- <img style="height: 120px" src="/assets/img/miai_logo_375_200.png"> -->
-    </a>
+<div fxLayout="row wrap" fxLayoutAlign="center" class="filler">
 </div>

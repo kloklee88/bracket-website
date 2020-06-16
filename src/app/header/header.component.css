@@ -1,7 +1,13 @@
+.app-navbar {
+    background: #9c27b0 !important;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+    position: fixed;
+    z-index: 2;
+}
 .header-title {
     font-family: "Georgia",serif;
-    margin-left: -10px;
-    font-weight: 500;
+    margin-left: 10px;
+    font-size: 1.5em;
 }
 .nav-tools {
     margin-left: 100px; 
@@ -11,4 +17,7 @@
 }
 .menu-spacer {
     flex: 1 1 auto;
+}
+.filler {
+    margin-bottom: 64px;
 }
