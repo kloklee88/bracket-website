@@ -1,5 +1,4 @@
 .docs-header-background {
-    overflow: hidden;
     background-color: #9c27b0;
 }
 .docs-header-section {
@@ -23,5 +22,20 @@
     font-weight: 300;
     line-height: 56px;
     margin: 15px 5px;
+}
+.home-div {
+    margin-bottom: 25px;
+}
+.home-div-text {
+    line-height: 1.5;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left !important;
+}
+.home-paragraph {
+    width: 600px;
+}
+html, body {
+    height: auto !important;
 }
 
