@@ -1,5 +1,11 @@
 # Bracket Website
 
+## Core functionality
+
+- Bracket Game: Will randomnly sort list of options decided at start at game and will construct a bracket for the user to play. 
+
+## Angular Build Info
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
 ## Development server
