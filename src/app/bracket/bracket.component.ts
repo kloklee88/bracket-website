@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { BracketOption } from './bracket-option.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -51,12 +51,26 @@ export class BracketComponent implements OnInit {
   id: number;
   bracketSize: number;
   group: string[];
+  bracketStarted: boolean = false;
 
   constructor(
     public dialog: MatDialog,
     private route: ActivatedRoute,
     private router: Router,
     private bracketService: BracketService) { }
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    //console.log('Key was pressed: ' + event.key);
+    //console.log(this.choice1.id + ' ' + this.choice2.id);
+    //console.log('Bracket started? ' + this.bracketStarted);
+    //This allows left and right arrow keys to choose options 
+    if (event.key == 'ArrowLeft' && this.bracketStarted) {
+      this.selectBracketOption(this.choice1, 1);
+    } else if (event.key == 'ArrowRight'  && this.bracketStarted) {
+      this.selectBracketOption(this.choice2, 2)
+    }
+  }
 
   ngOnInit(): void {
     this.openDialog();
@@ -97,6 +111,7 @@ export class BracketComponent implements OnInit {
     this.fullBracket.push(bracketRoundStart);
     this.choice1 = this.bracketOptions[this.bracketIndex];
     this.choice2 = this.bracketOptions[this.bracketIndex + 1];
+    this.bracketStarted = true;
   }
 
   async selectBracketOption(selectedOption: BracketOption, choiceNumber: number) {
