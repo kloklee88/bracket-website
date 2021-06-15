@@ -30,6 +30,11 @@ body {
     height: 80vh !important;
 }
 
+.img-choice-split {
+    max-width: 100% !important;
+    height: 40vh !important;
+}
+
 .mat-icon {
     font-size: 30px;
     width: 35px !important;

@@ -52,6 +52,7 @@ export class BracketComponent implements OnInit {
   bracketSize: number;
   group: string[];
   bracketStarted: boolean = false;
+  multipleImages: boolean = false;
 
   constructor(
     public dialog: MatDialog,
@@ -61,9 +62,6 @@ export class BracketComponent implements OnInit {
 
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
-    //console.log('Key was pressed: ' + event.key);
-    //console.log(this.choice1.id + ' ' + this.choice2.id);
-    //console.log('Bracket started? ' + this.bracketStarted);
     //This allows left and right arrow keys to choose options 
     if (event.key == 'ArrowLeft' && this.bracketStarted) {
       this.selectBracketOption(this.choice1, 1);
@@ -85,6 +83,7 @@ export class BracketComponent implements OnInit {
     });
 
     const subscribeDialog = dialogRef.componentInstance.dialogOutputEmitter.subscribe((data) => {
+      this.multipleImages = data.multipleImages;
       this.initBracket(data.bracketSize, data.group, data.bracketData);
     });
   }
@@ -98,10 +97,8 @@ export class BracketComponent implements OnInit {
   }
 
   setImageUrls() {
-    //console.log("Setting image URLs");
     //Set the imageUrl value to a random decided image in the images array list
     for (let i = 0; i < this.bracketOptions.length; i++) {
-      //console.log(this.bracketOptions[i].images.length);
       let imagesLength = this.bracketOptions[i].images.length
       const j = Math.floor(Math.random() * imagesLength);
       this.bracketOptions[i].imageUrl = this.bracketOptions[i].images[j]

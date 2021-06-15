@@ -1,3 +1,7 @@
 .dialog {
     text-align: center;
 }
+
+.dialog-inside {
+    height: 36vh;
+}

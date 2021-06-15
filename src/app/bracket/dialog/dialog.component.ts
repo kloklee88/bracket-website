@@ -10,6 +10,7 @@ export class DialogData {
   group: string[];
   bracketSize: number;
   bracketData: string;
+  multipleImages: boolean = false;
 }
 
 @Component({

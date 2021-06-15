@@ -1,6 +1,6 @@
 <div class="dialog">
   <h1 mat-dialog-title>Bracket Options</h1>
-  <div mat-dialog-content>
+  <div mat-dialog-content class="dialog-inside">
     <p style="color:red;"
       *ngIf="submitted && (!bracketDataFormControl.valid ||!bracketSizeFormControl.valid || !groupFormControl.valid)">
       Please
@@ -39,6 +39,7 @@
       </mat-select>
       <mat-error>Bracket Size is required</mat-error>
     </mat-form-field>
+    <mat-checkbox [(ngModel)]="data.multipleImages">Multiple Images</mat-checkbox>
   </div>
   <div>
     <button mat-button (click)="onNoClick()">Cancel</button>
