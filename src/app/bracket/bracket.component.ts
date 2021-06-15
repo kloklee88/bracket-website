@@ -97,10 +97,22 @@ export class BracketComponent implements OnInit {
     }
   }
 
+  setImageUrls() {
+    //console.log("Setting image URLs");
+    //Set the imageUrl value to a random decided image in the images array list
+    for (let i = 0; i < this.bracketOptions.length; i++) {
+      //console.log(this.bracketOptions[i].images.length);
+      let imagesLength = this.bracketOptions[i].images.length
+      const j = Math.floor(Math.random() * imagesLength);
+      this.bracketOptions[i].imageUrl = this.bracketOptions[i].images[j]
+    }
+  }
+
   initBracket(bracketSize: number, groups: string[], bracketData: string) {
     this.bracketService.saveBracketInfoSelected(bracketData);
     this.bracketTitle = this.bracketService.getBracketData(bracketData).bracketTitle;
     this.bracketOptions = this.bracketService.getBracketData(bracketData).bracketOptions;
+    this.setImageUrls();
     this.randomizeBracket();
     // Filter out the groups that we want
     this.bracketOptions = this.bracketOptions.filter(x => groups.includes(x.group));
