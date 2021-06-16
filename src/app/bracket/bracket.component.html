@@ -1,6 +1,7 @@
 <div fxLayout='column' class='main-container'>
     <div class='bracket-title' *ngIf="choice1 && choice2 && bracketOptions">
         <span>{{bracketTitle}} - Top {{bracketOptions.length}} - ({{counter}}/{{bracketOptions.length/2}})</span>
+        <span *ngIf="timer > 0"> -- Timer: {{timerLeft}}</span>
     </div>
     <div fxLayout='row' fxLayoutAlign='center' fxLayoutGap='10px' *ngIf="choice1 && choice2 && bracketOptions">
         <mat-card fxFlex='40%' class='choice' (click)='selectBracketOption(choice1, 1)' [@state1]='state1'>

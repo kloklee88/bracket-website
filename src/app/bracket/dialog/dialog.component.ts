@@ -11,6 +11,7 @@ export class DialogData {
   bracketSize: number;
   bracketData: string;
   multipleImages: boolean = false;
+  timer: number = 0;
 }
 
 @Component({
@@ -29,6 +30,7 @@ export class DialogComponent implements OnInit {
   @Output() dialogOutputEmitter = new EventEmitter();
   @ViewChild('allSelected') private allSelected: MatOption;
   bracketDataList: string[] = [];
+  timerList: number[] = [5,10,30];
 
   constructor(public dialogRef: MatDialogRef<DialogComponent>,
     private route: ActivatedRoute,

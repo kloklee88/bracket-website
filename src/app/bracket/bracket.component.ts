@@ -2,6 +2,8 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { BracketOption } from './bracket-option.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { Subscription, Observable, timer } from 'rxjs';
+
 import { DialogComponent } from './dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { trigger, state, style, transition, animate } from '@angular/animations';
@@ -53,6 +55,10 @@ export class BracketComponent implements OnInit {
   group: string[];
   bracketStarted: boolean = false;
   multipleImages: boolean = false;
+  timer: number;
+  timerLeft: number;
+  countdown: Subscription;
+  everySecond: Observable<number>;
 
   constructor(
     public dialog: MatDialog,
@@ -65,7 +71,7 @@ export class BracketComponent implements OnInit {
     //This allows left and right arrow keys to choose options 
     if (event.key == 'ArrowLeft' && this.bracketStarted) {
       this.selectBracketOption(this.choice1, 1);
-    } else if (event.key == 'ArrowRight'  && this.bracketStarted) {
+    } else if (event.key == 'ArrowRight' && this.bracketStarted) {
       this.selectBracketOption(this.choice2, 2)
     }
   }
@@ -74,16 +80,23 @@ export class BracketComponent implements OnInit {
     this.openDialog();
   }
 
+  ngOnDestroy(): void {
+    if(this.countdown && !this.countdown.closed) {
+      this.countdown.unsubscribe();
+    }
+  }
+
   openDialog() {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '350px',
-      height: '350px',
+      height: '400px',
       disableClose: true,
       data: { bracketSize: this.bracketSize, group: this.group }
     });
 
     const subscribeDialog = dialogRef.componentInstance.dialogOutputEmitter.subscribe((data) => {
       // Get values from dialog and initialize bracket
+      this.timer = data.timer;
       this.multipleImages = data.multipleImages;
       this.initBracket(data.bracketSize, data.group, data.bracketData);
     });
@@ -122,9 +135,15 @@ export class BracketComponent implements OnInit {
     this.choice1 = this.bracketOptions[this.bracketIndex];
     this.choice2 = this.bracketOptions[this.bracketIndex + 1];
     this.bracketStarted = true;
+    if (this.timer > 0) {
+      this.startTimer();
+    }
   }
 
   async selectBracketOption(selectedOption: BracketOption, choiceNumber: number) {
+    if (this.timer > 0) {
+      this.countdown.unsubscribe();
+    }
     // Change state to show animations
     if (choiceNumber === 1) {
       this.state1 = 'selected';
@@ -167,6 +186,22 @@ export class BracketComponent implements OnInit {
     await this.delay(100);
     this.state1 = 'normal';
     this.state2 = 'normal';
+    if (this.timer > 0) {
+      this.startTimer();
+    }
+  }
+
+  startTimer() {
+    //Start timer for page using the timer value from dialog box
+    //console.log("Starting timer");
+    this.everySecond = timer(1000, 1000);
+    this.countdown = this.everySecond.subscribe((seconds) => {
+      this.timerLeft = this.timer - seconds;
+      if (this.timerLeft == 0) {
+        console.log("Time's up!");
+        this.selectBracketOption(this.choice1, 1);
+      }
+    });
   }
 
   private async delay(ms: number) {

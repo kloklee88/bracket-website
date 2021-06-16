@@ -15,13 +15,13 @@ export class BracketService {
   constructor() { }
 
   public getBracketDataList(): string[] {
-    return ['SONGS', 'GIRLS'];
+    return ['KPOP SONGS', 'KPOP GIRLS'];
   }
 
   public getBracketData(bracketInfo: string): Bracket {
-    if(bracketInfo === 'GIRLS') {
+    if(bracketInfo === 'KPOP GIRLS') {
       return (dataGirls as any).default;
-    } else if (bracketInfo === 'SONGS') {
+    } else if (bracketInfo === 'KPOP SONGS') {
       return (dataSongs as any).default;
     }
     return null;
