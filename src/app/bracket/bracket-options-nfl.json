@@ -1,0 +1,53 @@
+{
+    "bracketTitle" : "NFL G.O.A.Ts",
+    "bracketOptions": [
+        {
+            "id": 1,
+            "name": "Jerry Rice",
+            "group": "Wide Receiver",
+            "images": ["https://i.imgur.com/REOqryE.jpg"]
+        },
+        {
+            "id": 2,
+            "name": "Tom Brady",
+            "group": "Quarterback",
+            "images": ["https://i.imgur.com/cI7RyUE.jpg"]
+        },
+        {
+            "id": 3,
+            "name": "Lawerence Taylor",
+            "group": "Linebacker",
+            "images": ["https://i.imgur.com/7QvukeI.jpg"]
+        },
+        {
+            "id": 4,
+            "name": "Jim Brown",
+            "group": "Running Back",
+            "images": ["https://i.imgur.com/X269kTd.jpg"]
+        },
+        {
+            "id": 5,
+            "name": "Walter Payton",
+            "group": "Running Back",
+            "images": ["https://i.imgur.com/CbRVdeg.jpg"]
+        },
+        {
+            "id": 6,
+            "name": "Joe Montana",
+            "group": "Quarterback",
+            "images": ["https://i.imgur.com/rMtPWbZ.jpg"]
+        },
+        {
+            "id": 7,
+            "name": "Reggie White",
+            "group": "Defensive End",
+            "images": ["https://i.imgur.com/c7YXHP5.jpg"]
+        },
+        {
+            "id": 8,
+            "name": "Peyton Manning",
+            "group": "Quarterback",
+            "images": ["https://i.imgur.com/gLeoDO3.jpg"]
+        }
+    ]
+}
