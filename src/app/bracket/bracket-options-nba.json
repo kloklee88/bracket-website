@@ -1,0 +1,53 @@
+{
+    "bracketTitle" : "NBA G.O.A.Ts",
+    "bracketOptions": [
+        {
+            "id": 1,
+            "name": "Michael Jordan",
+            "group": "Bulls",
+            "images": ["https://i.imgur.com/lzLFOrU.jpg"]
+        },
+        {
+            "id": 2,
+            "name": "Lebron James",
+            "group": "Cavaliers",
+            "images": ["https://i.imgur.com/c2NXkLS.jpg"]
+        },
+        {
+            "id": 3,
+            "name": "Kobe Bryant",
+            "group": "Lakers",
+            "images": ["https://i.imgur.com/XghQU58.jpg"]
+        },
+        {
+            "id": 4,
+            "name": "Shaquille O'Neal",
+            "group": "Lakers",
+            "images": ["https://i.imgur.com/8DAK6f9.jpg"]
+        },
+        {
+            "id": 5,
+            "name": "Bill Russell",
+            "group": "Celtics",
+            "images": ["https://i.imgur.com/4ZZDRhV.jpg"]
+        },
+        {
+            "id": 6,
+            "name": "Wilt Chamberlain",
+            "group": "Warriors",
+            "images": ["https://i.imgur.com/EPgQSIw.jpg"]
+        },
+        {
+            "id": 7,
+            "name": "Kareem Abdul-Jabbar",
+            "group": "Lakers",
+            "images": ["https://i.imgur.com/wEeUJWC.jpg"]
+        },
+        {
+            "id": 8,
+            "name": "Larry Bird",
+            "group": "Celtics",
+            "images": ["https://i.imgur.com/aUY7GRd.jpg"]
+        }
+    ]
+}

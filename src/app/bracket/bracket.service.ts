@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import * as dataGirls from './bracket-options-girls.json';
 import * as dataSongs from './bracket-options-songs.json';
+import * as dataNba from './bracket-options-nba.json';
 
 import { Bracket, BracketOption } from './bracket-option.model';
 
@@ -15,7 +16,7 @@ export class BracketService {
   constructor() { }
 
   public getBracketDataList(): string[] {
-    return ['KPOP SONGS', 'KPOP GIRLS'];
+    return ['KPOP SONGS', 'KPOP GIRLS', 'NBA GOATs'];
   }
 
   public getBracketData(bracketInfo: string): Bracket {
@@ -23,6 +24,8 @@ export class BracketService {
       return (dataGirls as any).default;
     } else if (bracketInfo === 'KPOP SONGS') {
       return (dataSongs as any).default;
+    } else if (bracketInfo === 'NBA GOATs') {
+      return (dataNba as any).default;
     }
     return null;
   }

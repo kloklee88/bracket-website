@@ -193,12 +193,11 @@ export class BracketComponent implements OnInit {
 
   startTimer() {
     //Start timer for page using the timer value from dialog box
-    //console.log("Starting timer");
     this.everySecond = timer(1000, 1000);
     this.countdown = this.everySecond.subscribe((seconds) => {
       this.timerLeft = this.timer - seconds;
       if (this.timerLeft == 0) {
-        console.log("Time's up!");
+        //If time runs out, select left option automatically
         this.selectBracketOption(this.choice1, 1);
       }
     });
