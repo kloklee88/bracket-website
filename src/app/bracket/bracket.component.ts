@@ -83,6 +83,7 @@ export class BracketComponent implements OnInit {
     });
 
     const subscribeDialog = dialogRef.componentInstance.dialogOutputEmitter.subscribe((data) => {
+      // Get values from dialog and initialize bracket
       this.multipleImages = data.multipleImages;
       this.initBracket(data.bracketSize, data.group, data.bracketData);
     });

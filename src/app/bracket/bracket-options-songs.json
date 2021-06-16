@@ -5,385 +5,193 @@
             "id": 1,
             "name": "MORE & MORE",
             "group": "Twice",
-            "imageUrl": "https://i.imgur.com/DGWu5Rz.jpg"
+            "images": ["https://i.imgur.com/DGWu5Rz.jpg"]
         },
         {
             "id": 2,
             "name": "Feel Special",
             "group": "Twice",
-            "imageUrl": "https://i.imgur.com/VkBmV6d.jpg"
+            "images": ["https://i.imgur.com/VkBmV6d.jpg"]
         },
         {
             "id": 3,
             "name": "Fancy",
             "group": "Twice",
-            "imageUrl": "https://i.imgur.com/NIFHbRl.jpg"
+            "images": ["https://i.imgur.com/NIFHbRl.jpg"]
         },
         {
             "id": 4,
             "name": "Fake & True",
             "group": "Twice",
-            "imageUrl": "https://i.imgur.com/qRpYMi2.jpg"
+            "images": ["https://i.imgur.com/qRpYMi2.jpg"]
         },
         {
             "id": 5,
             "name": "Dance the Night Away",
             "group": "Twice",
-            "imageUrl": "https://i.imgur.com/f98ao7y.jpg"
+            "images": ["https://i.imgur.com/f98ao7y.jpg"]
         },
         {
             "id": 6,
             "name": "Breakthrough",
             "group": "Twice",
-            "imageUrl": "https://i.imgur.com/cow7DQW.jpg"
+            "images": ["https://i.imgur.com/cow7DQW.jpg"]
         },
         {
             "id": 7,
             "name": "Happy Happy",
             "group": "Twice",
-            "imageUrl": "https://i.imgur.com/oOcMChO.jpg"
+            "images": ["https://i.imgur.com/oOcMChO.jpg"]
         },
         {
             "id": 8,
             "name": "Yes or Yes",
             "group": "Twice",
-            "imageUrl": "https://i.imgur.com/dvL0BmX.jpg"
+            "images": ["https://i.imgur.com/dvL0BmX.jpg"]
         },
         {
             "id": 9,
             "name": "BDZ",
             "group": "Twice",
-            "imageUrl": "https://i.imgur.com/MhripZ2.jpg"
+            "images": ["https://i.imgur.com/MhripZ2.jpg"]
         },
         {
             "id": 10,
             "name": "What is Love?",
             "group": "Twice",
-            "imageUrl": "https://i.imgur.com/n9Ng8Jl.jpg"
+            "images": ["https://i.imgur.com/n9Ng8Jl.jpg"]
         },
         {
             "id": 11,
             "name": "Heart Shaker",
             "group": "Twice",
-            "imageUrl": "https://i.imgur.com/6M6e9T1.jpg"
+            "images": ["https://i.imgur.com/6M6e9T1.jpg"]
         },
         {
             "id": 12,
             "name": "Likey",
             "group": "Twice",
-            "imageUrl": "https://i.imgur.com/cpWu5hr.jpg"
+            "images": ["https://i.imgur.com/cpWu5hr.jpg"]
         },
         {
             "id": 13,
             "name": "Knock Knock",
             "group": "Twice",
-            "imageUrl": "https://i.imgur.com/dRs7EdD.jpg"
+            "images": ["https://i.imgur.com/dRs7EdD.jpg"]
         },
         {
             "id": 14,
             "name": "Signal",
             "group": "Twice",
-            "imageUrl": "https://i.imgur.com/xpkpubk.jpg"
+            "images": ["https://i.imgur.com/xpkpubk.jpg"]
         },
         {
             "id": 15,
             "name": "TT",
             "group": "Twice",
-            "imageUrl": "https://i.imgur.com/gWwHUoy.jpg"
+            "images": ["https://i.imgur.com/gWwHUoy.jpg"]
         },
         {
             "id": 16,
             "name": "Cheer Up",
             "group": "Twice",
-            "imageUrl": "https://i.imgur.com/yymkuAe.jpg"
+            "images": ["https://i.imgur.com/yymkuAe.jpg"]
         },
         {
             "id": 17,
             "name": "Like Ooh-Ahh",
             "group": "Twice",
-            "imageUrl": "https://i.imgur.com/4o8fv4P.jpg"
+            "images": ["https://i.imgur.com/4o8fv4P.jpg"]
         },
         {
             "id": 18,
-            "name": "Nonstop",
-            "group": "Oh My Girl",
-            "imageUrl": "https://i.imgur.com/U5uLMAt.jpg"
+            "name": "I Can't Stop Me",
+            "group": "Twice",
+            "images": ["https://i.imgur.com/LhadAA6.png"]
         },
         {
             "id": 19,
-            "name": "La Vie En Rose",
-            "group": "Izone",
-            "imageUrl": "https://i.imgur.com/D44QtsQ.jpg"
+            "name": "Better",
+            "group": "Twice",
+            "images": ["https://i.imgur.com/tOSqovZ.png"]
         },
         {
             "id": 20,
-            "name": "Violeta",
-            "group": "Izone",
-            "imageUrl": "https://i.imgur.com/sNhuWyY.jpg"
+            "name": "Fanfare",
+            "group": "Twice",
+            "images": ["https://i.imgur.com/OeEbz5q.png"]
         },
         {
             "id": 21,
-            "name": "Fiesta",
-            "group": "Izone",
-            "imageUrl": "https://i.imgur.com/IzxfSa5.jpg"
+            "name": "Alcohol Free",
+            "group": "Twice",
+            "images": ["https://i.imgur.com/GiszzTr.png"]
         },
         {
             "id": 22,
-            "name": "eight",
-            "group": "IU",
-            "imageUrl": "https://i.imgur.com/ymmQloF.png"
+            "name": "Kura Kura",
+            "group": "Twice",
+            "images": ["https://i.imgur.com/ZLwLC9W.png"]
         },
         {
             "id": 23,
-            "name": "Blueming",
-            "group": "IU",
-            "imageUrl": "https://i.imgur.com/3D52Ok3.jpg"
+            "name": "Cry For Me",
+            "group": "Twice",
+            "images": ["https://i.imgur.com/A5LiI6Q.jpg"]
         },
         {
             "id": 24,
-            "name": "Bad Boy",
-            "group": "Red Velvet",
-            "imageUrl": "https://i.imgur.com/3D52Ok3.jpg"
+            "name": "Blueming",
+            "group": "IU",
+            "images": ["https://i.imgur.com/aOUiXJw.png"]
         },
         {
             "id": 25,
-            "name": "Psycho",
-            "group": "Red Velvet",
-            "imageUrl": "https://i.imgur.com/JqnABa0.png"
+            "name": "Lovesick Girls",
+            "group": "Blackpink",
+            "images": ["https://i.imgur.com/jYpFX04.png"]
         },
         {
             "id": 26,
-            "name": "Russian Roulette",
-            "group": "Red Velvet",
-            "imageUrl": "https://i.imgur.com/H6bbhsO.png"
+            "name": "How You Like That",
+            "group": "Blackpink",
+            "images": ["https://i.imgur.com/w9i935N.png"]
         },
         {
             "id": 27,
             "name": "As if it's Your Last",
             "group": "Blackpink",
-            "imageUrl": "https://i.imgur.com/INpC9QY.png"
+            "images": ["https://i.imgur.com/kGjWABY.png"]
         },
         {
             "id": 28,
-            "name": "Don't know What To Do",
+            "name": "Whistle",
             "group": "Blackpink",
-            "imageUrl": "https://i.imgur.com/71tMVMq.jpg"
+            "images": ["https://i.imgur.com/euXw2L6.png"]
         },
         {
             "id": 29,
             "name": "Playing with Fire",
             "group": "Blackpink",
-            "imageUrl": "https://i.imgur.com/2A6Mtxw.png"
+            "images": ["https://i.imgur.com/0USvMc9.png"]
         },
         {
             "id": 30,
-            "name": "STAY",
+            "name": "Kill this Love",
             "group": "Blackpink",
-            "imageUrl": "https://i.imgur.com/SHmXEj4.png"
+            "images": ["https://i.imgur.com/2OKHCWC.png"]
         },
         {
             "id": 31,
             "name": "DDU-DU- DDU-DU",
             "group": "Blackpink",
-            "imageUrl": "https://i.imgur.com/xRpAlXs.jpg"
+            "images": ["https://i.imgur.com/wbxDcNw.png"]
         },
         {
             "id": 32,
-            "name": "DALLA DALLA",
-            "group": "Itzy",
-            "imageUrl": "https://i.imgur.com/TqGnHxJ.jpg"
-        },
-        {
-            "id": 33,
-            "name": "Icy",
-            "group": "Itzy",
-            "imageUrl": "https://i.imgur.com/LhAHdP7.jpg"
-        },
-        {
-            "id": 34,
-            "name": "Wannabe",
-            "group": "Itzy",
-            "imageUrl": "https://i.imgur.com/dyxOoO2.jpg"
-        },
-        {
-            "id": 35,
-            "name": "Dally",
-            "group": "Hyolyn",
-            "imageUrl": "https://i.imgur.com/qvSROqB.png"
-        },
-        {
-            "id": 36,
-            "name": "SEE SEA",
-            "group": "Hyolyn",
-            "imageUrl": "https://i.imgur.com/aOUiXJw.png"
-        },
-        {
-            "id": 37,
-            "name": "BAE",
-            "group": "Hyolyn",
-            "imageUrl": "https://i.imgur.com/zCJDcAs.jpg"
-        },
-        {
-            "id": 38,
-            "name": "Adios",
-            "group": "Everglow",
-            "imageUrl": "https://i.imgur.com/JhTq8Nt.jpg"
-        },
-        {
-            "id": 39,
-            "name": "Bon Bon Chocolat",
-            "group": "Everglow",
-            "imageUrl": "https://i.imgur.com/EaAzyLG.png"
-        },
-        {
-            "id": 40,
-            "name": "DUN DUN",
-            "group": "Everglow",
-            "imageUrl": "https://i.imgur.com/TnV8kYX.png"
-        },
-        {
-            "id": 41,
-            "name": "Hola Hola",
-            "group": "Kard",
-            "imageUrl": "https://i.imgur.com/YpPpR8u.png"
-        },
-        {
-            "id": 42,
-            "name": "Ride on the wind",
-            "group": "Kard",
-            "imageUrl": "https://i.imgur.com/0NBiPYR.png"
-        },
-        {
-            "id": 43,
-            "name": "Oh NaNa",
-            "group": "Kard",
-            "imageUrl": "https://i.imgur.com/bMeXb16.png"
-        },
-        {
-            "id": 44,
-            "name": "Don't Recall",
-            "group": "Kard",
-            "imageUrl": "https://i.imgur.com/zAXQwSy.png"
-        },
-        {
-            "id": 45,
-            "name": "RUMOR",
-            "group": "Kard",
-            "imageUrl": "https://i.imgur.com/U876p3d.png"
-        },
-        {
-            "id": 46,
-            "name": "BIM BAM BUM",
-            "group": "Rocket Punch",
-            "imageUrl": "https://i.imgur.com/i0IUpgu.png"
-        },
-        {
-            "id": 47,
-            "name": "Way Back Home",
-            "group": "SHAUN",
-            "imageUrl": "https://i.imgur.com/FNKrNUo.png"
-        },
-        {
-            "id": 48,
-            "name": "Boogie Up",
-            "group": "WSJN",
-            "imageUrl": "https://i.imgur.com/fNjA5Gr.png"
-        },
-        {
-            "id": 49,
-            "name": "Save Me, Save You",
-            "group": "WSJN",
-            "imageUrl": "https://i.imgur.com/Y1sDtUj.png"
-        },
-        {
-            "id": 50,
-            "name": "As You Wish",
-            "group": "WSJN",
-            "imageUrl": "https://i.imgur.com/sebqvcC.png"
-        },
-        {
-            "id": 51,
-            "name": "Wee Woo",
-            "group": "Pristin",
-            "imageUrl": "https://i.imgur.com/kvDhO8B.png"
-        },
-        {
-            "id": 52,
-            "name": "Only You",
-            "group": "miss A",
-            "imageUrl": "https://i.imgur.com/JlmgOH0.png"
-        },
-        {
-            "id": 53,
-            "name": "MIROH",
-            "group": "Stray Kids",
-            "imageUrl": "https://i.imgur.com/3gFPpYX.jpg"
-        },
-        {
-            "id": 54,
-            "name": "Picky Picky",
-            "group": "Weki Meki",
-            "imageUrl": "https://i.imgur.com/oHGTyb7.png"
-        },
-        {
-            "id": 55,
-            "name": "Tiki-Taka(99%)",
-            "group": "Weki Meki",
-            "imageUrl": "https://i.imgur.com/IReqqTQ.png"
-        },
-        {
-            "id": 56,
-            "name": "These Nights",
-            "group": "Rich Brian and Chungha",
-            "imageUrl": "https://i.imgur.com/3qikWxm.jpg"
-        },
-        {
-            "id": 57,
-            "name": "Boy With Luv",
-            "group": "BTS",
-            "imageUrl": "https://i.imgur.com/68LKHmX.jpg"
-        },
-        {
-            "id": 58,
-            "name": "Fake Love",
-            "group": "BTS",
-            "imageUrl": "https://i.imgur.com/n4z8TtJ.jpg"
-        },
-        {
-            "id": 59,
-            "name": "Adios",
-            "group": "Hoody",
-            "imageUrl": "https://i.imgur.com/PK9zb2r.jpg"
-        },
-        {
-            "id": 60,
-            "name": "Very Very Very",
-            "group": "I.O.I",
-            "imageUrl": "https://i.imgur.com/texJRXA.jpg"
-        },
-        {
-            "id": 61,
-            "name": "Q&A",
-            "group": "Cherry Bullet",
-            "imageUrl": "https://i.imgur.com/npNqYiL.jpg"
-        },
-        {
-            "id": 62,
-            "name": "Really Really",
-            "group": "Cherry Bullet",
-            "imageUrl": "https://i.imgur.com/WPY1ICP.jpg"
-        },
-        {
-            "id": 63,
-            "name": "Jealousy",
-            "group": "Yuzion",
-            "imageUrl": "https://i.imgur.com/0srFj2n.jpg"
-        },
-        {
-            "id": 64,
-            "name": "Look At Me!!",
-            "group": "Yuzion",
-            "imageUrl": "https://i.imgur.com/esMWIvC.jpg"
+            "name": "La Vie En Rose",
+            "group": "Izone",
+            "images": ["https://i.imgur.com/m3NGUfS.jpg"]
         }
     ]
 }
