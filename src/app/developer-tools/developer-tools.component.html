@@ -2,7 +2,74 @@
     <div fxLayout='row' fxLayoutAlign='center'>
         <h1>Developer Tools</h1>
     </div>
+    <div fxLayout='row'>
+        <button mat-raised-button (click)="addData()" class="demo-button">
+            Add data
+          </button>
+          <button
+              mat-raised-button
+              [disabled]="!bracketOptions.length"
+              (click)="removeData()"
+              class="demo-button">
+            Remove data
+          </button>
+    </div>
     <div fxLayout='row' fxLayoutAlign='center'>
-        <p>Work in Progress...</p>
+        <form [formGroup]="form" autocomplete="off">
+            <ng-container formArrayName="bracketOptions">
+              <mat-table [dataSource]="bracketOptions.controls">
+          
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+          
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                  <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                  <mat-cell *matCellDef="let element" [formGroup]="element">
+                    <mat-form-field floatLabel="never">
+                        <input matInput placeholder="Name" formControlName="name" required>
+                      </mat-form-field>
+                  </mat-cell>
+                </ng-container>
+          
+                <!-- Group Column -->
+                <ng-container matColumnDef="group">
+                  <mat-header-cell *matHeaderCellDef> Group </mat-header-cell>
+                  <mat-cell *matCellDef="let element" [formGroup]="element">
+                    <mat-form-field floatLabel="never">
+                        <input matInput placeholder="Group" formControlName="group" required>
+                      </mat-form-field>
+                  </mat-cell>
+                </ng-container>
+          
+                <!-- Images Column -->
+                <ng-container matColumnDef="images">
+                  <mat-header-cell *matHeaderCellDef> Image </mat-header-cell>
+                  <mat-cell *matCellDef="let element;" [formGroup]="element">
+                    <mat-form-field floatLabel="never">
+                      <input matInput placeholder="Images" formControlName="images" (change)="onImagesInputChange(element)" required>
+                    </mat-form-field>
+                  </mat-cell>
+                </ng-container>
+          
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+              </mat-table>
+            </ng-container>
+          </form>
+    </div>
+    <div fxLayout='row' fxLayoutAlign='center'>
+        <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Form value
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <code>
+                {{form.value | json}}
+              </code>
+            </mat-expansion-panel>
+          </mat-accordion>
     </div>
 </div>
