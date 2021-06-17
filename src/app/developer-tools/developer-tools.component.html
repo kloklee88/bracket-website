@@ -1,4 +1,5 @@
 <div fxFill fxLayout='column' fxLayoutGap='10px' class='main-container'>
+    <span></span>
     <div fxLayout='row' fxLayoutAlign='center'>
         <h1>Developer Tools</h1>
     </div>
@@ -20,6 +21,13 @@
 
                     <!--- Note that these columns can be defined in any order.
                       The actual rendered columns are set as a property on the row definition" -->
+
+                    <ng-container matColumnDef="id">
+                        <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+                        <mat-cell *matCellDef="let element" [formGroup]="element">
+                            {{element.get('id').value}}
+                        </mat-cell>
+                    </ng-container>
 
                     <!-- Name Column -->
                     <ng-container matColumnDef="name">

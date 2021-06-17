@@ -10,7 +10,7 @@ import { BracketOption } from '../bracket/bracket-option.model';
 })
 export class DeveloperToolsComponent implements OnInit {
   form: FormGroup;
-  displayedColumns = ['name', 'group', 'images'];
+  displayedColumns = ["id", 'name', 'group', 'images'];
   @ViewChild(MatTable) table: MatTable<BracketOption>;
 
   constructor(
