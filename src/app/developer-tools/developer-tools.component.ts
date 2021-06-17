@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatTable } from '@angular/material/table';
 import { BracketOption } from '../bracket/bracket-option.model';
 
@@ -19,6 +19,7 @@ export class DeveloperToolsComponent implements OnInit {
 
   ngOnInit() {
     this.form = this._formBuilder.group({
+      bracketTitle: new FormControl,
       bracketOptions: this._formBuilder.array([BracketOption.asFormGroup(new BracketOption(1, null, null, null))])
     });
     console.log(this.bracketOptions)

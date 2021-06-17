@@ -7,4 +7,11 @@
 .mat-form-field{
     width: calc(100% - 15px);
 }
+
+.demo-button-container {
+    padding-bottom: 16px;
+}
   
+.demo-button + .demo-button {
+    margin-left: 8px;
+}
